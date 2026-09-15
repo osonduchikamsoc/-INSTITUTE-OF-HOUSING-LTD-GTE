@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>registrationform</title>
+
+       <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <img src="image/Original logo.png" alt="">
+                    <!-- <i class="fa-solid fa-house"></i> -->
+                </span>
+
+                <span>
+                    INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
+                    <small> MANAGEMENT LTD/GTE</small>
+                </span>
+            </a>
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="">Home</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="training.html">Training </a>
+                <a href="investment.html" class="">Investment</a>
+                <a href="contact.html">Contact</a>
+               <a href="https://wa.me/2348000000000" class="nav-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </nav>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="trainee-registration" id="trainee-registration">
+        <div class="trainee-registration-container">
+
+        
+            <div class="trainee-form-header">
+                <span class="trainee-form-label">TRAINEE REGISTRATION</span>
+
+                <h2>
+                    Real Estate Professional
+                    <span>Training Registration</span>
+                </h2>
+
+                <p>
+                    Complete the registration form below to begin your journey
+                    toward becoming a trained and professional real estate practitioner.
+                </p>
+            </div>
+
+            <form class="trainee-form" action="#" method="POST">
+
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <div class="form-section-heading">
+                        <span>01</span>
+                        <div>
+                            <h3>Personal Information</h3>
+                            <p>Tell us about yourself.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="first-name">
+                                First Name <span>*</span>
+                            </label>
+                            <input type="text" id="first-name" name="first_name" placeholder="Enter your first name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">
+                                Last Name <span>*</span>
+                            </label>
+                            <input type="text" id="last-name" name="last_name" placeholder="Enter your last name"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address <span>*</span>
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone Number <span>*</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="0800 000 0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date-of-birth">
+                                Date of Birth
+                            </label>
+                            <input type="date" id="date-of-birth" name="date_of_birth">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">
+                                Gender
+                            </label>
+                            <select id="gender" name="gender">
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">
+                                    Prefer not to say
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <div class="form-section-heading">
+                        <span>02</span>
+                        <div>
+                            <h3>Contact & Location</h3>
+                            <p>Where can we reach you?</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group form-full">
+                            <label for="address">
+                                Residential Address <span>*</span>
+                            </label>
+                            <input type="text" id="address" name="address" placeholder="Enter your residential address"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">
+                                City <span>*</span>
+                            </label>
+                            <input type="text" id="city" name="city" placeholder="Enter city" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">
+                                State <span>*</span>
+                            </label>
+                            <select id="state" name="state" required>
+                                <option value="">Select state</option>
+                                <option value="abia">Abia</option>
+                                <option value="adamawa">Adamawa</option>
+                                <option value="akwa-ibom">Akwa Ibom</option>
+                                <option value="anambra">Anambra</option>
+                                <option value="bauchi">Bauchi</option>
+                                <option value="bayelsa">Bayelsa</option>
+                                <option value="benue">Benue</option>
+                                <option value="borno">Borno</option>
+                                <option value="cross-river">Cross River</option>
+                                <option value="delta">Delta</option>
+                                <option value="ebonyi">Ebonyi</option>
+                                <option value="edo">Edo</option>
+                                <option value="ekiti">Ekiti</option>
+                                <option value="enugu">Enugu</option>
+                                <option value="gombe">Gombe</option>
+                                <option value="imo">Imo</option>
+                                <option value="jigawa">Jigawa</option>
+                                <option value="kaduna">Kaduna</option>
+                                <option value="kano">Kano</option>
+                                <option value="katsina">Katsina</option>
+                                <option value="kebbi">Kebbi</option>
+                                <option value="kogi">Kogi</option>
+                                <option value="kwara">Kwara</option>
+                                <option value="lagos">Lagos</option>
+                                <option value="nasarawa">Nasarawa</option>
+                                <option value="niger">Niger</option>
+                                <option value="ogun">Ogun</option>
+                                <option value="ondo">Ondo</option>
+                                <option value="osun">Osun</option>
+                                <option value="oyo">Oyo</option>
+                                <option value="plateau">Plateau</option>
+                                <option value="rivers">Rivers</option>
+                                <option value="sokoto">Sokoto</option>
+                                <option value="taraba">Taraba</option>
+                                <option value="yobe">Yobe</option>
+                                <option value="zamfara">Zamfara</option>
+                                <option value="fct">FCT Abuja</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Education & Career -->
+                <div class="form-section">
+                    <div class="form-section-heading">
+                        <span>03</span>
+                        <div>
+                            <h3>Education & Career</h3>
+                            <p>Help us understand your background.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="qualification">
+                                Highest Qualification <span>*</span>
+                            </label>
+                            <select id="qualification" name="qualification" required>
+                                <option value="">Select qualification</option>
+                                <option value="secondary">
+                                    Secondary School Certificate
+                                </option>
+                                <option value="ond">OND</option>
+                                <option value="hnd">HND</option>
+                                <option value="bsc">Bachelor's Degree</option>
+                                <option value="masters">Master's Degree</option>
+                                <option value="phd">PhD</option>
+                                <option value="professional">
+                                    Professional Qualification
+                                </option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occupation">
+                                Current Occupation
+                            </label>
+                            <input type="text" id="occupation" name="occupation"
+                                placeholder="e.g. Entrepreneur, Graduate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">
+                                Real Estate Experience
+                            </label>
+                            <select id="experience" name="experience">
+                                <option value="">
+                                    Select experience level
+                                </option>
+                                <option value="none">
+                                    No experience
+                                </option>
+                                <option value="less-than-1">
+                                    Less than 1 year
+                                </option>
+                                <option value="1-3">
+                                    1 – 3 years
+                                </option>
+                                <option value="3-5">
+                                    3 – 5 years
+                                </option>
+                                <option value="5-plus">
+                                    More than 5 years
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">
+                                Current Organization
+                            </label>
+                            <input type="text" id="organization" name="organization"
+                                placeholder="Company or organization">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Training Information -->
+                <div class="form-section">
+                    <div class="form-section-heading">
+                        <span>04</span>
+                        <div>
+                            <h3>Training Information</h3>
+                            <p>Select your preferred training options.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="training-program">
+                                Training Program <span>*</span>
+                            </label>
+                            <select id="training-program" name="training_program" required>
+                                <option value="">
+                                    Select training program
+                                </option>
+                                <option value="property-management">
+                                    Property Management
+                                </option>
+                                <option value="real-estate-agency">
+                                    Real Estate Agency
+                                </option>
+                                <option value="property-administration">
+                                    Property Administration
+                                </option>
+                                <option value="real-estate-sales">
+                                    Real Estate Sales
+                                </option>
+                                <option value="housing-management">
+                                    Housing Administration & Management
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="training-mode">
+                                Preferred Training Mode <span>*</span>
+                            </label>
+                            <select id="training-mode" name="training_mode" required>
+                                <option value="">
+                                    Select training mode
+                                </option>
+                                <option value="physical">Physical</option>
+                                <option value="online">Online</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="start-date">
+                                Preferred Start Date
+                            </label>
+                            <input type="date" id="start-date" name="start_date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referral">
+                                How Did You Hear About Us?
+                            </label>
+                            <select id="referral" name="referral">
+                                <option value="">
+                                    Select an option
+                                </option>
+                                <option value="website">Website</option>
+                                <option value="google">Google</option>
+                                <option value="social-media">
+                                    Social Media
+                                </option>
+                                <option value="friend">
+                                    Friend / Referral
+                                </option>
+                                <option value="advertisement">
+                                    Advertisement
+                                </option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <div class="form-section-heading">
+                        <span>05</span>
+                        <div>
+                            <h3>Additional Information</h3>
+                            <p>Tell us about your goals.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goals">
+                            Why do you want to join this training?
+                        </label>
+
+                        <textarea id="goals" name="training_goals" rows="5"
+                            placeholder="Tell us about your career goals, interests, or what you hope to achieve..."></textarea>
+                    </div>
+                </div>
+
+
+                <!-- Agreement -->
+                <div class="form-agreement">
+
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" name="agreement" required>
+
+                        <span class="custom-checkbox"></span>
+
+                        <span class="agreement-text">
+                            I confirm that the information provided in this
+                            registration form is accurate and complete. I agree
+                            to abide by the Institute's training policies and
+                            requirements.
+                        </span>
+                    </label>
+
+                </div>
+
+
+                <!-- Submit -->
+                <div class="form-submit">
+                    <button type="submit">
+                        Submit Registration
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p>
+                        Your information will be reviewed by our admissions team.
+                    </p>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <a href="https://wa.me/2348000000000?text=Hello%2C%20I%20found%20your%20real%20estate%20website%20and%20I%20would%20like%20to%20make%20an%20enquiry."
+        class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+</body>
+
+
+<script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.getElementById("navbar");
+
+    menuBtn.addEventListener("click", function () {
+
+        navbar.classList.toggle("show");
+
+        const icon = menuBtn.querySelector("i");
+
+        if (navbar.classList.contains("show")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+
+    });
+
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            navbar.classList.remove("show");
+
+            const icon = menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+</script>
+
+</html>

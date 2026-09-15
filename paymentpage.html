@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= PAYMENT PROMPT ================= -->
+    <div class="iham-pay">
+        <!-- PAYMENT HEADER -->
+        <div class="iham-pay__head">
+
+            <a href="training.html" class="btn btn-dark">
+                Back
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            
+
+            <h1>Make a Payment</h1>
+
+            <p class="iham-pay__intro">
+                Make your payment using our approved payment options and
+                submit your payment confirmation for verification.
+            </p>
+
+            <span class="iham-pay__eyebrow">
+                SECURE PAYMENT
+            </span> 
+
+        </div>
+
+
+        <div class="iham-pay__body">
+
+            <form id="iham-pay-form">
+
+                <!-- PAYMENT PURPOSE -->
+                <div class="iham-form-group">
+
+                    <label for="payFor">
+                        What are you paying for?
+                    </label>
+
+                    <select id="payFor" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="Property Deposit">
+                            Property Deposit
+                        </option>
+
+                        <option value="Property Purchase (Full Payment)">
+                            Property Purchase (Full Payment)
+                        </option>
+
+                        <option value="Rent Payment">
+                            Rent Payment
+                        </option>
+
+                        <option value="Training Program Fee">
+                            Training Program Fee
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- REFERENCE -->
+                <div class="iham-form-group">
+
+                    <label for="payReference">
+                        Property / Reference No.
+                        <span>(if applicable)</span>
+                    </label>
+
+                    <input type="text" id="payReference" placeholder="e.g. Property name or reference number">
+
+                </div>
+
+
+                <!-- NAME -->
+                <div class="iham-form-group">
+
+                    <label for="payName">
+                        Full Name
+                    </label>
+
+                    <input type="text" id="payName" placeholder="Enter your full name" required>
+
+                </div>
+
+
+                <!-- AMOUNT -->
+                <div class="iham-form-group">
+
+                    <label for="payAmount">
+                        Amount (₦)
+                    </label>
+
+                    <input type="number" id="payAmount" placeholder="Enter amount" min="1" required>
+
+                </div>
+
+
+                <!-- ERROR -->
+                <p class="iham-pay-error" id="iham-pay-error">
+                    Please select a payment method before continuing.
+                </p>
+
+
+                <!-- PAYMENT METHODS -->
+                <div class="iham-pay-tabs">
+
+                    <button type="button" class="iham-pay-tab active" data-method="transfer">
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <span>Bank Transfer</span>
+                    </button>
+
+
+                    <button type="button" class="iham-pay-tab" data-method="card">
+                        <i class="fa-regular fa-credit-card"></i>
+
+                        <span>Card</span>
+                    </button>
+
+
+                    <button type="button" class="iham-pay-tab" data-method="ussd">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        <span>USSD</span>
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                 BANK TRANSFER
+            ================================================== -->
+
+                <div class="iham-pay-panel active" id="panel-transfer">
+
+                    <div class="iham-bank-heading">
+
+                        <div class="iham-bank-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                BANK TRANSFER
+                            </span>
+
+                            <h3>
+                                Approved Bank Account
+                            </h3>
+
+                            <p>
+                                Please transfer your payment to the account
+                                details below.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BANK DETAILS -->
+                    <div class="iham-detail-box">
+
+                        <div class="iham-detail-row">
+
+                            <div class="iham-detail-label">
+                                <i class="fa-solid fa-building-columns"></i>
+
+                                <span>Bank</span>
+                            </div>
+
+                            <strong>
+                                Zenith Bank Plc
+                            </strong>
+
+                        </div>
+
+
+                        <div class="iham-detail-row">
+
+                            <div class="iham-detail-label">
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <span>Branch / Address</span>
+                            </div>
+
+                            <strong>
+                                Plot 439C, 3rd Avenue, Qwarimpa
+                            </strong>
+
+                        </div>
+
+
+                        <div class="iham-detail-row">
+
+                            <div class="iham-detail-label">
+                                <i class="fa-solid fa-hashtag"></i>
+
+                                <span>Account Number</span>
+                            </div>
+
+                            <div class="iham-account-number">
+
+                                <strong>
+                                    1013376281
+                                </strong>
+
+                                <button type="button" class="iham-copy-btn" onclick="copyIhamAccount()">
+                                    <i class="fa-regular fa-copy"></i>
+                                    Copy
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="iham-detail-row">
+
+                            <div class="iham-detail-label">
+                                <i class="fa-solid fa-user"></i>
+
+                                <span>Account Name</span>
+                            </div>
+
+                            <strong>
+                                Institute of Housing Administration
+                                &amp; Management Ltd/GTE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BANK NOTICE -->
+                    <div class="iham-bank-notice">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            <strong>Important:</strong>
+                            Please verify the account name and account number
+                            before completing your transfer.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RECEIPT UPLOAD -->
+                    <div class="iham-upload-group" onclick="document.getElementById('paySlipUpload').click()">
+
+                        <div class="iham-upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+
+                        <div class="iham-upload-content">
+
+                            <strong id="uploadLabel">
+                                Upload Proof of Payment
+                            </strong>
+
+                            <span>
+                                Click to upload your receipt,
+                                transfer slip or screenshot
+                            </span>
+
+                            <small>
+                                JPG, PNG or PDF · Maximum 10 MB
+                            </small>
+
+                        </div>
+
+                        <input type="file" id="paySlipUpload" accept="image/*,.pdf">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                 CARD PAYMENT
+            ================================================== -->
+
+                <div class="iham-pay-panel" id="panel-card">
+
+                    <div class="iham-bank-heading">
+
+                        <div class="iham-bank-icon">
+                            <i class="fa-regular fa-credit-card"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                CARD PAYMENT
+                            </span>
+
+                            <h3>
+                                Pay Securely With Your Card
+                            </h3>
+
+                            <p>
+                                Enter your card details to continue.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="iham-form-group">
+
+                        <label for="cardNumber">
+                            Card Number
+                        </label>
+
+                        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
+
+                    </div>
+
+
+                    <div class="iham-card-grid">
+
+                        <div class="iham-form-group">
+
+                            <label for="cardExpiry">
+                                Expiry Date
+                            </label>
+
+                            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+
+                        </div>
+
+
+                        <div class="iham-form-group">
+
+                            <label for="cardCvv">
+                                CVV
+                            </label>
+
+                            <input type="text" id="cardCvv" placeholder="123" maxlength="3">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                 USSD PAYMENT
+            ================================================== -->
+
+                <div class="iham-pay-panel" id="panel-ussd">
+
+                    <div class="iham-bank-heading">
+
+                        <div class="iham-bank-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                USSD PAYMENT
+                            </span>
+
+                            <h3>
+                                Pay Using USSD
+                            </h3>
+
+                            <p>
+                                Dial the code below using the phone number
+                                linked to your bank account.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="iham-ussd-code">
+                        *966*00*1013376281#
+                    </div>
+
+
+                    <p class="iham-ussd-instruction">
+                        Follow your bank's instructions to complete the
+                        transaction. After payment, upload your confirmation
+                        below.
+                    </p>
+
+
+                    <div class="iham-upload-group" onclick="document.getElementById('paySlipUploadUssd').click()">
+
+                        <div class="iham-upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+
+                        <div class="iham-upload-content">
+
+                            <strong id="uploadLabelUssd">
+                                Upload Payment Confirmation
+                            </strong>
+
+                            <span>
+                                Click to upload your transaction receipt
+                            </span>
+
+                            <small>
+                                JPG, PNG or PDF · Maximum 10 MB
+                            </small>
+
+                        </div>
+
+                        <input type="file" id="paySlipUploadUssd" accept="image/*,.pdf">
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button type="submit" class="iham-pay-submit" id="iham-pay-submit">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <span>
+                        Confirm &amp; Send via WhatsApp
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- SECURITY -->
+                <div class="iham-pay-note">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <p>
+                        Your payment information and receipt will be handled
+                        securely and used only for payment verification.
+                        Our team will review your submission and contact you
+                        once your payment has been confirmed.
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        // wa.me requires digits only — country code + number, no "+",
+        // spaces, or dashes. Replace with the Institute's real number.
+        const WHATSAPP_NUMBER = '2348058891992';
+
+        let activeMethod = 'transfer';
+
+        document.querySelectorAll('.iham-pay-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.iham-pay-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.iham-pay-panel').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                activeMethod = this.dataset.method;
+                document.getElementById('panel-' + activeMethod).classList.add('active');
+            });
+        });
+
+        function wireUploadLabel(inputId, labelId) {
+            document.getElementById(inputId).addEventListener('change', function () {
+                const label = document.getElementById(labelId);
+                label.textContent = this.files[0] ? this.files[0].name : 'Click to upload proof of payment';
+            });
+        }
+        wireUploadLabel('paySlipUpload', 'uploadLabel');
+        wireUploadLabel('paySlipUploadUssd', 'uploadLabelUssd');
+
+        const methodLabels = { transfer: 'Bank Transfer', card: 'Card', ussd: 'USSD' };
+
+        document.getElementById('iham-pay-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const payFor = document.getElementById('payFor').value;
+            const reference = document.getElementById('payReference').value.trim();
+            const name = document.getElementById('payName').value.trim();
+            const amount = document.getElementById('payAmount').value;
+
+            if (!payFor || !name || !amount) {
+                this.reportValidity();
+                return;
+            }
+
+            const message =
+                `*Payment Notification — IHAM*%0A%0A` +
+                `*Paying for:* ${payFor}%0A` +
+                (reference ? `*Reference:* ${reference}%0A` : '') +
+                `*Name:* ${name}%0A` +
+                `*Amount:* ₦${Number(amount).toLocaleString('en-NG')}%0A` +
+                `*Payment Method:* ${methodLabels[activeMethod]}%0A%0A` +
+                `Please find my payment confirmation attached separately on WhatsApp.`;
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+        });
+    </script>
+
+</body>
+
+ <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --navy: #101c2c;
+            --navy-light: #18283d;
+            --green: #116530;
+            --green-light: #1a8a43;
+            --white: #ffffff;
+            --light: #f5f6f8;
+            --text: #4d5560;
+            --dark: #17202b;
+            --border: #e6e7e9;
+            --red: #c0392b;
+            --shadow: 0 15px 40px rgba(16, 28, 44, 0.09);
+            --radius: 12px;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            background: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* ================= PAYMENT CARD ================= */
+        .iham-pay {
+            width: 100%;
+            max-width: 480px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .iham-pay__head {
+            background: var(--navy);
+            color: var(--white);
+            padding: 28px 30px;
+        }
+
+        .iham-pay__head span {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .iham-pay__head h1 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-top: 6px;
+        }
+
+        .iham-pay__body {
+            padding: 28px 30px 30px;
+        }
+
+        .iham-form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .iham-form-group label {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .iham-form-group input,
+        .iham-form-group select {
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            background: var(--light);
+            color: var(--dark);
+            outline: none;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .iham-form-group input:focus,
+        .iham-form-group select:focus {
+            border-color: var(--green);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(17, 101, 48, 0.14);
+        }
+
+        /* ---- Payment method tabs ---- */
+        .iham-pay-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .iham-pay-tab {
+            border: 1px solid var(--border);
+            background: var(--light);
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text);
+            transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+        }
+
+        .iham-pay-tab i {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .iham-pay-tab.active {
+            border-color: var(--green);
+            background: rgba(17, 101, 48, 0.06);
+            color: var(--green);
+        }
+
+        .iham-pay-panel {
+            display: none;
+        }
+
+        .iham-pay-panel.active {
+            display: block;
+        }
+
+        .iham-detail-box {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+        }
+
+        .iham-detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .iham-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .iham-detail-row span:first-child {
+            color: var(--text);
+        }
+
+        .iham-detail-row span:last-child {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .iham-ussd-code {
+            text-align: center;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 14px;
+        }
+
+        .iham-upload-group {
+            border: 1.5px dashed var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.15s ease;
+        }
+
+        .iham-upload-group:hover {
+            border-color: var(--green);
+        }
+
+        .iham-upload-group i {
+            font-size: 20px;
+            color: var(--green);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .iham-upload-group span {
+            font-size: 12.5px;
+            color: var(--text);
+        }
+
+        .iham-upload-group input[type="file"] {
+            display: none;
+        }
+
+        .iham-pay-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: var(--green);
+            color: var(--white);
+            font-size: 14.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .iham-pay-submit:hover {
+            background: var(--green-light);
+        }
+
+        .iham-pay-note {
+            text-align: center;
+            font-size: 11.5px;
+            color: var(--text);
+            margin-top: 14px;
+        }
+
+        .iham-pay-error {
+            font-size: 12.5px;
+            color: var(--red);
+            margin-bottom: 14px;
+            display: none;
+        }
+
+        .iham-pay-error.show {
+            display: block;
+        }
+    </style>
+
+</html>
