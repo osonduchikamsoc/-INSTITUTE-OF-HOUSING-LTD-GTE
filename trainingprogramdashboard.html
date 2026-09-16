@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Training Programs Admin</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- <div class="sidebar-logo">
+            <div class="logo-mark">
+                IHAM
+            </div>
+
+            <div>
+                <h2>IHAM</h2>
+                <span>Administration</span>
+            </div>
+        </div> -->
+
+
+        <a href="#" class="logo">
+            <span class="">
+                <img src="image/original logo.png" alt="Institute Logo">
+            </span>
+            <span>
+                INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
+                <small> MANAGEMENT LTD/GTE</small>
+            </span>
+            <span>Administration</span>
+        </a>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="overviewdashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Overview</span>
+            </a>
+
+            <a href="propertymgtdashboard.html" class="active">
+                <i class="fa-solid fa-building"></i>
+                <span>Properties</span>
+            </a>
+
+            <a href="traineesdashboard.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Trainees</span>
+            </a>
+
+            <a href="paymentdashboard.html">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Payments</span>
+            </a>
+
+            <a href="enquirydashboard.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Enquiries</span>
+            </a>
+
+            <a href="trainingprogramdashboard.html">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Training Programs</span>
+            </a>
+
+            <!-- <a href="reports.html">
+                    <i class="fa-solid fa-file-chart-column"></i>
+                    <span>Reports</span>
+                </a> -->
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="top-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Search training programs..." id="searchProgram">
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>4</span>
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Admin</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="page-content">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Training Programs</h1>
+
+                    <p>
+                        Create and manage IHAM training programs,
+                        intake dates, fees and enrolled trainees.
+                    </p>
+                </div>
+
+
+                <button type="button" class="add-program-btn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Training Program
+
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="program-summary">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Programs</span>
+                        <h3 id="totalPrograms">4</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Enrolled</span>
+                        <h3 id="totalEnrolled">123</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <span>Upcoming Intakes</span>
+                        <h3>3</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-naira-sign"></i>
+                    </div>
+
+                    <div>
+                        <span>Program Fees</span>
+                        <h3>₦1.5M+</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER -->
+            <div class="program-filters">
+
+                <div class="filter-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" id="programFilter" placeholder="Search by program name...">
+
+                </div>
+
+
+                <select id="modeFilter">
+
+                    <option value="all">
+                        All Modes
+                    </option>
+
+                    <option value="Physical">
+                        Physical
+                    </option>
+
+                    <option value="Online">
+                        Online
+                    </option>
+
+                    <option value="Weekend">
+                        Weekend
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PROGRAM TABLE -->
+            <div class="program-table-container">
+
+                <div class="table-heading">
+
+                    <div>
+                        <h2>Training Programs List</h2>
+
+                        <p>
+                            Manage available professional training programs.
+                        </p>
+                    </div>
+
+                    <span id="programResult">
+                        4 Programs
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table id="programTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Program Name
+                                </th>
+
+                                <th>
+                                    Description
+                                </th>
+
+                                <th>
+                                    Fee
+                                </th>
+
+                                <th>
+                                    Intake Date
+                                </th>
+
+                                <th>
+                                    Mode
+                                </th>
+
+                                <th>
+                                    Enrolled Trainees
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="programTableBody">
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Housing Administration
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Professional training in
+                                    housing administration and management.
+                                </td>
+
+                                <td>
+                                    ₦450,000
+                                </td>
+
+                                <td>
+                                    05 October 2026
+                                </td>
+
+                                <td>
+                                    <span>
+                                        Physical
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        45
+                                    </strong>
+                                    Trainees
+                                </td>
+
+                                <td>
+
+                                    <button>
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Real Estate Management
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Practical training covering
+                                    real estate operations and management.
+                                </td>
+
+                                <td>
+                                    ₦500,000
+                                </td>
+
+                                <td>
+                                    12 October 2026
+                                </td>
+
+                                <td>
+                                    <span>
+                                        Weekend
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        32
+                                    </strong>
+                                    Trainees
+                                </td>
+
+                                <td>
+
+                                    <button>
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Property Valuation
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Professional property valuation,
+                                    assessment and reporting.
+                                </td>
+
+                                <td>
+                                    ₦350,000
+                                </td>
+
+                                <td>
+                                    19 October 2026
+                                </td>
+
+                                <td>
+                                    <span>
+                                        Online
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        28
+                                    </strong>
+                                    Trainees
+                                </td>
+
+                                <td>
+
+                                    <button>
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Property & Housing Management
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Advanced training for housing
+                                    and property management professionals.
+                                </td>
+
+                                <td>
+                                    ₦600,000
+                                </td>
+
+                                <td>
+                                    02 November 2026
+                                </td>
+
+                                <td>
+                                    <span>
+                                        Physical
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        18
+                                    </strong>
+                                    Trainees
+                                </td>
+
+                                <td>
+
+                                    <button>
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-pen"></i>
+
+                                    </button>
+
+
+                                    <button>
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADD / EDIT PROGRAM FORM -->
+            <div id="programFormSection" style="display:none;">
+
+                <h2 id="formTitle">
+                    Add Training Program
+                </h2>
+
+
+                <form id="programForm">
+
+                    <input type="hidden" id="programId">
+
+
+                    <div>
+
+                        <label for="programName">
+                            Program Name
+                        </label>
+
+                        <input type="text" id="programName" placeholder="Enter program name" required>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="programDescription">
+                            Description
+                        </label>
+
+                        <textarea id="programDescription" rows="5" placeholder="Enter program description"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="programFee">
+                            Training Fee
+                        </label>
+
+                        <input type="number" id="programFee" placeholder="Enter training fee" min="0" required>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="intakeDate">
+                            Intake Date
+                        </label>
+
+                        <input type="date" id="intakeDate" required>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="programMode">
+                            Training Mode
+                        </label>
+
+                        <select id="programMode" required>
+
+                            <option value="">
+                                Select Mode
+                            </option>
+
+                            <option value="Physical">
+                                Physical
+                            </option>
+
+                            <option value="Online">
+                                Online
+                            </option>
+
+                            <option value="Weekend">
+                                Weekend
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="programCapacity">
+                            Maximum Trainees
+                        </label>
+
+                        <input type="number" id="programCapacity" placeholder="Maximum number of trainees" min="1">
+
+                    </div>
+
+
+                    <div>
+
+                        <button type="submit">
+
+                            <i class="fa-solid fa-save"></i>
+
+                            Save Program
+
+                        </button>
+
+
+                        <button type="button">
+
+                            Cancel
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PROGRAM DETAILS MODAL -->
+    <div id="programModal" style="display:none;">
+
+        <div>
+
+            <button type="button">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <h2 id="modalProgramName">
+                Program Name
+            </h2>
+
+
+            <p id="modalProgramDescription">
+                Program description
+            </p>
+
+
+            <p>
+                <strong>Training Fee:</strong>
+
+                <span id="modalProgramFee"></span>
+            </p>
+
+
+            <p>
+                <strong>Intake Date:</strong>
+
+                <span id="modalProgramDate"></span>
+            </p>
+
+
+            <p>
+                <strong>Mode:</strong>
+
+                <span id="modalProgramMode"></span>
+            </p>
+
+
+            <p>
+                <strong>Enrolled Trainees:</strong>
+
+                <span id="modalProgramTrainees"></span>
+            </p>
+
+
+            <p>
+                <strong>Maximum Capacity:</strong>
+
+                <span id="modalProgramCapacity"></span>
+            </p>
+
+
+            <button type="button" onclick="closeProgramModal()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

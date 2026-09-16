@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Overview Dashboard </title>
+
+  <link rel="stylesheet" href="dashboard.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- <div class="sidebar-logo">
+
+      <div class="logo-mark">
+        IHAM
+        <span class="">
+          <img src="image/original logo.png" alt="Institute Logo">
+        </span>
+      </div>
+
+      <div>
+        <h2>IINSTITUTE OF HOUSING ADMINISTRATION </h2>
+
+        <span>Administration</span>
+
+      </div>
+
+    </div> -->
+
+
+    <a href="#" class="logo">
+      <span class="">
+        <img src="image/original logo.png" alt="Institute Logo">
+      </span>
+      <span>
+        INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
+        <small> MANAGEMENT LTD/GTE</small>
+      </span>
+    </a>
+
+
+
+
+
+    <nav class="sidebar-nav">
+
+      <a href="overviewdashboard.html">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Overview</span>
+      </a>
+
+      <a href="propertymgtdashboard.html" class="active">
+        <i class="fa-solid fa-building"></i>
+        <span>Properties</span>
+      </a>
+
+      <a href="traineesdashboard.html">
+        <i class="fa-solid fa-users"></i>
+        <span>Trainees</span>
+      </a>
+
+      <a href="paymentdashboard.html">
+        <i class="fa-solid fa-credit-card"></i>
+        <span>Payments</span>
+      </a>
+
+      <a href="enquirydashboard.html">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Enquiries</span>
+      </a>
+
+      <a href="trainingprogramdashboard.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Training Programs</span>
+      </a>
+
+      <!-- <a href="reports.html">
+                    <i class="fa-solid fa-file-chart-column"></i>
+                    <span>Reports</span>
+                </a> -->
+
+      <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a href="#">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main">
+
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+      <button class="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+
+      <div class="top-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" placeholder="Search dashboard...">
+
+      </div>
+
+
+      <div class="topbar-right">
+
+        <button class="notification">
+
+          <i class="fa-regular fa-bell"></i>
+
+          <span>4</span>
+
+        </button>
+
+
+        <div class="admin-profile">
+
+          <div class="admin-avatar">
+            A
+          </div>
+
+          <div class="admin-info">
+
+            <strong>Admin</strong>
+
+            <small>
+              Administrator
+            </small>
+
+          </div>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <section class="page-content">
+
+
+      <!-- PAGE HEADER -->
+      <div class="page-header">
+
+        <div>
+
+          <h1>
+            Overview Dashboard
+          </h1>
+
+          <p>
+            Welcome back. Here's an overview of your
+            property and training activities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- SUMMARY CARDS -->
+      <div class="dashboard-cards">
+
+
+        <!-- TOTAL PROPERTIES -->
+        <div class="stat-card">
+
+          <div class="stat-icon">
+
+            <i class="fa-solid fa-building"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              Total Properties Listed
+            </span>
+
+            <h3>
+              00
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTIVE TRAINEES -->
+        <div class="stat-card">
+
+          <div class="stat-icon">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              Active Trainees
+            </span>
+
+            <h3>
+              0
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- PENDING PAYMENTS -->
+        <div class="stat-card">
+
+          <div class="stat-icon">
+
+            <i class="fa-solid fa-clock"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              Pending Payments
+            </span>
+
+            <h3>
+              ₦000
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- NEW ENQUIRIES -->
+        <div class="stat-card">
+
+          <div class="stat-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              New Enquiries This Week
+            </span>
+
+            <h3>
+              0
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- DASHBOARD GRID -->
+      <div class="dashboard-grid">
+
+
+        <!-- REVENUE -->
+        <div class="chart-card">
+
+          <div class="table-header">
+
+            <div>
+
+              <h2>
+                Revenue Overview
+              </h2>
+
+              <p>
+                Property sales vs. training fees
+              </p>
+
+            </div>
+
+
+            <select>
+              <option>2026</option>
+              <option> 2025</option>
+              <option>2024 </option>
+            </select>
+
+          </div>
+
+
+          <!-- CHART CONTAINER -->
+          <div class="revenue-chart">
+
+            <div class="chart-y-axis">
+              <span> ₦10M</span>
+              <span>₦8M </span>
+              <span>₦6M</span>
+              <span> ₦2M </span>
+              <span>₦0</span>
+
+            </div>
+
+
+            <div class="chart-area">
+
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+
+
+              <div class="chart-bars">
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:72%;" title="Property Sales: ₦7.2M">
+                    </div>
+
+                    <div class="bar training-bar" style="height:35%;" title="Training Fees: ₦3.5M">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Jan
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:64%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:42%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Feb
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:78%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:48%;">
+                    </div>
+
+                  </div>
+
+                  <span> Mar</span>
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:70%;"></div>
+                    <div class="bar training-bar" style="height:53%;"> </div>
+                  </div>
+                  <span> Apr</span>
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:83%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:58%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    May
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:76%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:61%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Jun
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:88%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:66%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Jul
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:80%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:70%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Aug
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:91%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:73%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Sep
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:84%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:77%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Oct
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:87%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:81%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Nov
+                  </span>
+
+                </div>
+
+
+                <div class="month">
+
+                  <div class="bars">
+
+                    <div class="bar property-bar" style="height:93%;">
+                    </div>
+
+                    <div class="bar training-bar" style="height:85%;">
+                    </div>
+
+                  </div>
+
+                  <span>
+                    Dec
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CHART LEGEND -->
+          <div class="chart-legend">
+
+            <span>
+              <i class="fa-solid fa-square"></i>
+              Property Sales
+            </span>
+
+            <span>
+              <i class="fa-solid fa-square"></i>
+              Training Fees
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECENT ACTIVITY -->
+        <div class="activity-card">
+
+          <div class="table-header">
+
+            <div>
+
+              <h2>
+                Recent Activity
+              </h2>
+
+              <p>
+                Latest system activities
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="activity-list">
+            <!-- ACTIVITY 1 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-user-plus"></i>
+              </div>
+
+              <div>
+                <strong> New trainee registration </strong>
+                <small><!-- Chiamaka Okafor registered for --> Housing Administration. </small>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <!-- ACTIVITY 2 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+
+                <strong> New enquiry received</strong>
+                <small> property enquiry.</small>
+                <span>0minutes ago </span>
+              </div>
+            </div>
+
+            <!-- ACTIVITY 3 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+
+              <div>
+                <strong> Payment confirmed</strong>
+                <small>₦00,000 training fee payment was confirmed.</small>
+                <span>   0 hour ago</span>
+              </div>
+
+            </div>
+
+
+            <!-- ACTIVITY 4 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+
+              <div>
+
+                <strong> New property listed</strong>
+                 
+                
+
+                <small>
+                  Residential property added to
+                  the property listings.
+                </small>
+
+                <span>
+                  0 hours ago
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- ACTIVITY 5 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-user-plus"></i>
+              </div>
+
+              <div>
+                <strong>
+                  New trainee registration
+                </strong>
+                <small> </small>
+                <span>  0 hours ago</span>
+              </div>
+            </div>
+
+
+            <!-- ACTIVITY 6 -->
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fa-solid fa-check-circle"></i>
+              </div>
+
+              <div>
+                <strong>
+                  Payment confirmation
+                </strong>
+
+                <small>
+                  ₦00,000 property payment
+                  was approved.
+                </small>
+                <span>
+                 0hours ago
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <a href="" class="view-all">
+            View All Activity
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK ACTIONS -->
+      <div class="card">
+
+        <div class="table-header">
+
+          <div>
+
+            <h2>
+              Quick Actions
+            </h2>
+
+            <p>
+              Quickly access frequently used
+              administrative functions.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+          <a href="propertymgtdashboard.html" class="primary-btn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Property
+
+          </a>
+
+
+          <a href="traineesdashboard.html" class="secondary-btn">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            View Trainees
+
+          </a>
+
+
+          <a href="trainingprogramdashboard.html" class="secondary-btn">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            Manage Programs
+
+          </a>
+
+
+          <a href="paymentdashboard.html" class="secondary-btn">
+            <i class="fa-solid fa-credit-card"></i>
+            Review Payments
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

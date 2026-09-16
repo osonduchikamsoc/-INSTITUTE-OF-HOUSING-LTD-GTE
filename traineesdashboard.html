@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Trainee Management | IHAM Admin</title>
+
+    <link rel="stylesheet" href="trainees.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <!-- <div class="logo-area">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div>
+                    <h2>IHAM</h2>
+                    <span>Admin Panel</span>
+                </div>
+
+            </div> -->
+
+
+
+            <a href="#" class="logo">
+                <span class="">
+                    <img src="image/original logo.png" alt="Institute Logo">
+                </span>
+                <span>
+                    INSTITUTE OF HOUSING ADMINISTRATION <span>& </span>
+                    <small> MANAGEMENT LTD/GTE</small>
+                </span>
+                <span>Admin Panel</span>
+            </a>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="overviewdashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="propertymgtdashboard.html" class="active">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Properties</span>
+                </a>
+
+                <a href="traineesdashboard.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Trainees</span>
+                </a>
+
+                <a href="paymentdashboard.html">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a>
+
+                <a href="enquirydashboard.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Enquiries</span>
+                </a>
+
+                <a href="trainingprogramdashboard.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Training Programs</span>
+                </a>
+
+                <!-- <a href="reports.html">
+                    <i class="fa-solid fa-file-chart-column"></i>
+                    <span>Reports</span>
+                </a> -->
+
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="top-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" placeholder="Search trainees...">
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <button class="notification">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span>3</span>
+
+                    </button>
+
+
+                    <div class="admin-profile">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>Admin</strong>
+
+                            <small>Administrator</small>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ================= PAGE ================= -->
+
+            <section class="page-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1>Trainee Management</h1>
+
+                        <p>
+                            Manage registered trainees, registration details
+                            and payment status.
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn btn-primary" id="exportCSV">
+
+                        <i class="fa-solid fa-file-csv"></i>
+
+                        Export CSV
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= STATS ================= -->
+
+                <div class="trainee-stats">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Total Trainees</span>
+
+                            <h3 id="totalTrainees">
+                                6
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon paid">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Paid</span>
+
+                            <h3>3</h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon pending">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Pending</span>
+
+                            <h3>2</h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon partial">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Partial</span>
+
+                            <h3>1</h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= TABLE BOX ================= -->
+
+                <div class="management-box">
+
+
+                    <!-- FILTER -->
+
+                    <div class="filter-area">
+
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" id="traineeSearch" placeholder="Search name, email or phone...">
+
+                        </div>
+
+
+
+                        <select id="programFilter">
+
+                            <option value="">
+                                All Programs
+                            </option>
+
+                            <option value="Housing Management">
+                                Housing Management
+                            </option>
+
+                            <option value="Real Estate Management">
+                                Real Estate Management
+                            </option>
+
+                            <option value="Property Administration">
+                                Property Administration
+                            </option>
+
+                            <option value="Housing Practice">
+                                Housing Practice
+                            </option>
+
+                        </select>
+
+
+
+                        <select id="paymentFilter">
+
+                            <option value="">
+                                All Payment Status
+                            </option>
+
+                            <option value="Paid">
+                                Paid
+                            </option>
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="Partial">
+                                Partial
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-wrapper">
+
+                        <table class="trainee-table" id="traineeTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Trainee</th>
+
+                                    <th>Program Enrolled</th>
+
+                                    <th>Registration Date</th>
+
+                                    <th>Contact Information</th>
+
+                                    <th>Payment Status</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <!-- TRAINEE 1 -->
+
+                                <tr data-program="Housing Management" data-payment="Paid">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                CO
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Chiamaka Okafor
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/001
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Housing Management
+                                    </td>
+
+
+                                    <td>
+                                        12 Sep 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0803 123 4567
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                chiamaka@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status paid-status">
+                                            Paid
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(0)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- TRAINEE 2 -->
+
+                                <tr data-program="Real Estate Management" data-payment="Pending">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                EN
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Emmanuel Nwachukwu
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/002
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Real Estate Management
+                                    </td>
+
+
+                                    <td>
+                                        10 Sep 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0812 555 9021
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                emmanuel@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status pending-status">
+                                            Pending
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(1)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- TRAINEE 3 -->
+
+                                <tr data-program="Property Administration" data-payment="Partial">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                AO
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Adaobi Okoro
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/003
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Property Administration
+                                    </td>
+
+
+                                    <td>
+                                        08 Sep 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0806 456 7832
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                adaobi@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status partial-status">
+                                            Partial
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(2)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- TRAINEE 4 -->
+
+                                <tr data-program="Housing Practice" data-payment="Paid">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                DO
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Daniel Obi
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/004
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Housing Practice
+                                    </td>
+
+
+                                    <td>
+                                        05 Sep 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0901 223 3344
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                daniel@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status paid-status">
+                                            Paid
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(3)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- TRAINEE 5 -->
+
+                                <tr data-program="Housing Management" data-payment="Pending">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                FO
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Favour Ojukwu
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/005
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Housing Management
+                                    </td>
+
+
+                                    <td>
+                                        02 Sep 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0809 889 7766
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                favour@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status pending-status">
+                                            Pending
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(4)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- TRAINEE 6 -->
+
+                                <tr data-program="Real Estate Management" data-payment="Paid">
+
+                                    <td>
+
+                                        <div class="trainee-info">
+
+                                            <div class="trainee-avatar">
+                                                IC
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Ifeanyi Chukwu
+                                                </strong>
+
+                                                <small>
+                                                    IHAM/TR/006
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+                                        Real Estate Management
+                                    </td>
+
+
+                                    <td>
+                                        30 Aug 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="contact-info">
+
+                                            <span>
+                                                <i class="fa-solid fa-phone"></i>
+                                                0816 332 1199
+                                            </span>
+
+                                            <span>
+                                                <i class="fa-solid fa-envelope"></i>
+                                                ifeanyi@email.com
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="payment-status paid-status">
+                                            Paid
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <button class="view-btn" onclick="viewTrainee(5)">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                            View Details
+
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ================= DETAILS MODAL ================= -->
+
+    <div class="modal" id="traineeModal">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Trainee Registration Details</h2>
+
+                    <p>
+                        Complete registration information
+                    </p>
+
+                </div>
+
+
+                <button class="close-modal" onclick="closeModal()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <div class="detail-section">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <h3>Personal Information</h3>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+                        <div class="detail-item">
+
+                            <label>Full Name</label>
+
+                            <strong id="detailName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Registration Number</label>
+
+                            <strong id="detailRegNo">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Email Address</label>
+
+                            <strong id="detailEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Phone Number</label>
+
+                            <strong id="detailPhone">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Program Enrolled</label>
+
+                            <strong id="detailProgram">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Registration Date</label>
+
+                            <strong id="detailDate">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EDUCATION -->
+
+                <div class="detail-section">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <h3>Education Background</h3>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+                        <div class="detail-item">
+
+                            <label>Highest Qualification</label>
+
+                            <strong id="detailQualification">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Institution</label>
+
+                            <strong id="detailInstitution">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Course of Study</label>
+
+                            <strong id="detailCourse">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Graduation Year</label>
+
+                            <strong id="detailGraduation">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NEXT OF KIN -->
+
+                <div class="detail-section">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-people-roof"></i>
+
+                        <h3>Next of Kin</h3>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+                        <div class="detail-item">
+
+                            <label>Name</label>
+
+                            <strong id="detailKinName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Relationship</label>
+
+                            <strong id="detailKinRelationship">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Phone</label>
+
+                            <strong id="detailKinPhone">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <label>Address</label>
+
+                            <strong id="detailKinAddress">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DOCUMENTS -->
+
+                <div class="detail-section">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                        <h3>Uploaded Documents</h3>
+
+                    </div>
+
+
+                    <div class="documents" id="documentsList">
+
+                        <a href="#" class="document">
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                            <span>Certificate.pdf</span>
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </a>
+
+
+                        <a href="#" class="document">
+
+                            <i class="fa-solid fa-file-image"></i>
+
+                            <span>Passport.jpg</span>
+
+                            <i class="fa-solid fa-download"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PAYMENT -->
+
+                <div class="detail-section payment-section">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                        <h3>Payment Information</h3>
+
+                    </div>
+
+
+                    <div class="payment-update">
+
+                        <div>
+
+                            <label>
+                                Current Payment Status
+                            </label>
+
+                            <span id="currentPaymentStatus" class="payment-status paid-status">
+                                Paid
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Update Payment Status
+                            </label>
+
+                            <select id="updatePayment">
+
+                                <option value="Paid">
+                                    Paid
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Partial">
+                                    Partial
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button class="btn btn-primary" id="savePayment">
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Update Status
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+                <button class="btn btn-light" onclick="closeModal()">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
