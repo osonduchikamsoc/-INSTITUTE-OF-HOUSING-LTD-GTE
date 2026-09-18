@@ -1,20 +1,3 @@
-/* =========================================================
-   IHAM REALTY — VIEW PROPERTIES
-   Institute of Housing Administration & Management Ltd/GTE
-
-   DESIGN SYSTEM:
-   Navy Blue + Green + Gold + White + Ash
-
-   IMPORTANT:
-   - Existing HTML classes preserved
-   - Existing IDs preserved
-   - No HTML structure changes required
-   - Normal transparent logo
-   - Fixed hero background implemented
-   - Mobile fallback included
-   - Scroll reveal classes included
-   - Responsive desktop / tablet / mobile
-   ========================================================= */
 
 
 /* =========================================================
@@ -258,20 +241,14 @@ p {
 }
 
 .logo-icon {
-    width: 58px;
-    height: 58px;
-
-    flex: 0 0 58px;
-
+    width: 78px;
+    height: 78px;
+    border: 2px solid white;
+    flex: 0 0 52px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* Normal logo — no artificial background */
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
     overflow: hidden;
 }
 

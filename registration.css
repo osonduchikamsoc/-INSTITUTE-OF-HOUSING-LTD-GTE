@@ -1,19 +1,3 @@
-/* =========================================================
-   IHAM TRAINEE REGISTRATION
-   Institute of Housing Administration & Management Ltd/GTE
-
-   Design System:
-   Navy + Green + Gold + White + Ash
-
-   IMPORTANT:
-   - Existing HTML class names preserved
-   - Existing IDs preserved
-   - No HTML structure changes required
-   - Normal logo kept transparent
-   - Fixed background implemented
-   - Mobile fallback included
-   ========================================================= */
-
 
 /* =========================================================
    1. ROOT DESIGN SYSTEM
@@ -248,25 +232,17 @@ p {
 
     letter-spacing: 0.4px;
 }
-
 .logo-icon {
-    width: 58px;
-    height: 58px;
-
-    flex: 0 0 58px;
-
+    width: 78px;
+    height: 78px;
+    border: 2px solid white;
+    flex: 0 0 52px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* Normal transparent logo */
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
     overflow: hidden;
 }
-
 .logo-icon img {
     display: block;
 

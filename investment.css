@@ -1,26 +1,3 @@
-/* =========================================================
-   IHAM — INVESTMENT PAGE
-   Institute of Housing Administration & Management Ltd/GTE
-
-   DESIGN SYSTEM:
-   Navy Blue + Green + Gold + White + Ash
-
-   IMPORTANT:
-   - Existing HTML structure preserved
-   - Existing class names preserved
-   - Existing IDs preserved
-   - Existing links/buttons preserved
-   - Existing JavaScript preserved
-   - Fixed background implemented
-   - Mobile fallback included
-   - Scroll reveal supported
-   - Logo has NO background color
-   ========================================================= */
-
-
-/* =========================================================
-   1. ROOT DESIGN SYSTEM
-   ========================================================= */
 
 :root {
 
@@ -248,21 +225,15 @@ p {
 }
 
 .logo-icon {
-    width: 54px;
-    height: 54px;
-
-    flex: 0 0 54px;
-
+    width: 78px;
+    height: 78px;
+    border: 2px solid white;
+    flex: 0 0 52px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-
-    background: transparent !important;
-
-    border: 0 !important;
-    box-shadow: none !important;
 }
 
 .logo-icon img {
@@ -1670,10 +1641,7 @@ p {
         z-index: 3050;
     }
 
-    /*
-       This matches your existing JavaScript:
-       navbar.classList.toggle("show")
-    */
+   
 
     .navbar.show {
         right: 0;
