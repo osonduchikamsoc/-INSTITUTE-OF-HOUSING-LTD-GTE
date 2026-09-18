@@ -1,11 +1,3 @@
-/* =========================================================
-   IHAM REAL ESTATE — FINAL HOMEPAGE STYLESHEET
-   Institute of Housing Administration & Management Ltd/GTE
-
-   Design system:
-   Navy + Green + Gold + White + Ash
-   Existing HTML / classes / IDs preserved
-   ========================================================= */
 
 
 /* =========================================================
@@ -2326,35 +2318,22 @@ select:focus-visible {
 
     .navbar {
         position: fixed;
-
         top: 72px;
         right: -100%;
-
         width: min(320px, 85%);
-
         height: calc(100vh - 72px);
-
         padding: 30px 25px;
-
         display: flex;
         flex-direction: column;
-
         align-items: stretch;
         justify-content: flex-start;
-
         gap: 7px;
-
         background: var(--black);
-
         border-left: 1px solid rgba(255, 255, 255, .08);
-
         box-shadow:
             -15px 0 40px rgba(0, 0, 0, .30);
-
         overflow-y: auto;
-
         transition: right .35s ease;
-
         z-index: 3050;
     }
 
