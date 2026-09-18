@@ -1039,8 +1039,14 @@ p {
         min-height: 76px;
     }
 
+  
+
     .menu-btn {
-        display: flex;
+         display: flex;
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+         
     }
 
     .navbar {
@@ -1073,7 +1079,7 @@ p {
         border-bottom: 1px solid var(--border);
     }
 
-    /* Fixed background fallback for mobile devices */
+
     .iham-about-hero {
         background-attachment: scroll;
     }
