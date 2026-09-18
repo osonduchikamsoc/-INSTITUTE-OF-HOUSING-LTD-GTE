@@ -1,10 +1,3 @@
-/* =========================================================
-   IHAM REAL ESTATE — ADAPTED ABOUT US STYLESHEET
-   Institute of Housing Administration & Management Ltd/GTE
-
-   Design system: Navy + Green + Gold + White + Ash
-   HTML structure & class names strictly preserved.
-   ========================================================= */
 
 /* =========================================================
    1. ROOT DESIGN SYSTEM
@@ -142,47 +135,62 @@ p {
 /* =========================================================
    3. HEADER & NAVIGATION
    ========================================================= */
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     min-height: 82px;
+
     z-index: 3000;
-    background: rgba(8, 13, 19, 0.96);
+
+    background: rgba(8, 13, 19, .96);
+
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
     transition: var(--transition);
 }
 
 .nav-container {
     min-height: 82px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
 }
 
-/* Logo */
+
+/* =========================================================
+   5. LOGO
+   ========================================================= */
+
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-shrink: 0;
+
     max-width: 390px;
+
     color: var(--white);
+
     font-size: 13px;
     font-weight: 700;
     line-height: 1.25;
-    letter-spacing: 0.4px;
+
+    letter-spacing: .4px;
 }
 
 .logo-icon {
-    width: 78px;
-    height: 78px;
-    border: 2px solid white;
+    width: 55px;
+    height: 55px;
+    border: 3px solid white;
     flex: 0 0 52px;
     border-radius: 50%;
     display: flex;
@@ -195,6 +203,10 @@ p {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    font-size: 50px;
+
 }
 
 .logo>span:last-child {
@@ -221,31 +233,44 @@ p {
     letter-spacing: 1.2px;
 }
 
-/* Navbar Links */
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
+
 .navbar {
     display: flex;
     align-items: center;
+
     gap: 28px;
 }
 
 .navbar>a {
     position: relative;
-    color: rgba(255, 255, 255, 0.82);
+
+    color: rgba(255, 255, 255, .82);
+
     font-size: 14px;
     font-weight: 500;
+
     padding: 8px 0;
+
     transition: var(--transition);
 }
 
 .navbar>a:not(.nav-whatsapp)::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: 0;
+
     width: 0;
     height: 2px;
+
     background: var(--green);
-    transition: width 0.3s ease;
+
+    transition: width .3s ease;
 }
 
 .navbar>a:hover {
@@ -256,17 +281,28 @@ p {
     width: 100%;
 }
 
-/* Nav WhatsApp Button */
+
+/* =========================================================
+   7. NAV WHATSAPP
+   ========================================================= */
+
 .nav-whatsapp {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
+
     gap: 8px;
+
     padding: 11px 17px !important;
+
     background: var(--green);
-    color: var(--navy-dark) !important;
-    border-radius: var(--radius-sm);
-    font-weight: 700 !important;
+
+    color: var(--white) !important;
+
+    border-radius: 7px;
+
+    font-weight: 600 !important;
+
     box-shadow: none;
 }
 
@@ -276,24 +312,41 @@ p {
 
 .nav-whatsapp:hover {
     background: var(--green-dark);
+
     color: var(--white) !important;
+
     transform: translateY(-2px);
+
     box-shadow: var(--shadow-green);
 }
 
-/* Mobile Menu Button */
+
+/* =========================================================
+   8. MOBILE MENU BUTTON
+   ========================================================= */
+
 .menu-btn {
     display: none;
+
     width: 43px;
     height: 43px;
+
     align-items: center;
     justify-content: center;
+
     position: relative;
     z-index: 3100;
-    border: 1px solid rgba(255, 255, 255, 0.20);
-    border-radius: var(--radius-sm);
+
+    border: 1px solid rgba(255, 255, 255, .20);
+
+    border-radius: 7px;
+
+    background: transparent;
+
     color: var(--white);
+
     font-size: 20px;
+
     transition: var(--transition);
 }
 
@@ -301,6 +354,9 @@ p {
     border-color: var(--green);
     color: var(--green);
 }
+
+
+
 
 /* =========================================================
    4. HERO SECTION (WITH FIXED BACKGROUND)

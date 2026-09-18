@@ -206,9 +206,7 @@ p {
 .logo {
     display: flex;
     align-items: center;
-
     gap: 12px;
-
     flex-shrink: 0;
 
     max-width: 390px;
@@ -223,9 +221,9 @@ p {
 }
 
 .logo-icon {
-    width: 78px;
-    height: 78px;
-    border: 2px solid white;
+    width: 55px;
+    height: 55px;
+    border: 3px solid white;
     flex: 0 0 52px;
     border-radius: 50%;
     display: flex;
@@ -241,21 +239,16 @@ p {
     border: 0;
     border-radius: 0;
     font-size: 50px;
-    
+
 }
 
 .logo>span:last-child {
     display: block;
-
     max-width: 390px;
-
     color: var(--white);
-
     font-family: var(--sans);
-
     font-size: 13px;
     font-weight: 700;
-
     line-height: 1.25;
 }
 
@@ -265,16 +258,11 @@ p {
 
 .logo small {
     display: block;
-
     margin-top: 2px;
-
     color: var(--green);
-
     font-family: var(--sans);
-
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 600;
-
     letter-spacing: 1.2px;
 }
 
@@ -2281,8 +2269,7 @@ select:focus-visible {
 
     .logo small {
         font-size: 8px;
-
-        letter-spacing: 1px;
+        /* letter-spacing: 1px; */
     }
 
     .menu-btn {
