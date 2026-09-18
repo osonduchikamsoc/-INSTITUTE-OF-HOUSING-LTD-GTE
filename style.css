@@ -61,10 +61,15 @@ textarea {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9999;
     background: rgba(16, 28, 44, 0.96);
     backdrop-filter: blur(10px);
 }
+
+
+
+
+
 
 .nav-container {
     height: 78px;
@@ -1452,6 +1457,9 @@ textarea {
 
 @media (max-width: 900px) {
 
+   
+
+   
     .footer {
         padding-top: 40px;
     }

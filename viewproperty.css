@@ -1,0 +1,2127 @@
+/* =========================================================
+   IHAM REALTY — VIEW PROPERTIES
+   Institute of Housing Administration & Management Ltd/GTE
+
+   DESIGN SYSTEM:
+   Navy Blue + Green + Gold + White + Ash
+
+   IMPORTANT:
+   - Existing HTML classes preserved
+   - Existing IDs preserved
+   - No HTML structure changes required
+   - Normal transparent logo
+   - Fixed hero background implemented
+   - Mobile fallback included
+   - Scroll reveal classes included
+   - Responsive desktop / tablet / mobile
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+
+    /* ---------- Navy ---------- */
+
+    --navy: #101c2c;
+    --navy-dark: #080d13;
+    --navy-light: #162538;
+    --navy-soft: #1d3044;
+
+    /* ---------- Green ---------- */
+
+    --green: #20c997;
+    --green-dark: #159f76;
+    --green-light: #52ddb5;
+    --green-soft: rgba(32, 201, 151, 0.10);
+
+    /* ---------- Gold ---------- */
+
+    --gold: #d4af37;
+    --gold-light: #e5c76b;
+    --gold-dark: #a98519;
+    --gold-soft: rgba(212, 175, 55, 0.12);
+
+    /* ---------- Neutrals ---------- */
+
+    --white: #ffffff;
+    --light: #f6f8fa;
+    --ash: #eef1f4;
+    --ash-dark: #dfe4e9;
+
+    --text-dark: #17202b;
+    --text: #273444;
+
+    --muted: #697586;
+    --muted-light: rgba(255, 255, 255, 0.68);
+
+    /* ---------- Borders ---------- */
+
+    --border: rgba(255, 255, 255, 0.10);
+    --border-light: #e7eaee;
+    --border-dark: rgba(16, 28, 44, 0.12);
+
+    /* ---------- Typography ---------- */
+
+    --sans: "DM Sans", Arial, sans-serif;
+    --serif: "Playfair Display", Georgia, serif;
+
+    /* ---------- Layout ---------- */
+
+    --container: 1180px;
+
+    /* ---------- Radius ---------- */
+
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* ---------- Shadows ---------- */
+
+    --shadow:
+        0 18px 45px rgba(16, 28, 44, 0.10);
+
+    --shadow-lg:
+        0 25px 70px rgba(8, 13, 19, 0.16);
+
+    --shadow-dark:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    --shadow-green:
+        0 12px 35px rgba(32, 201, 151, 0.22);
+
+    --shadow-gold:
+        0 12px 35px rgba(212, 175, 55, 0.20);
+
+    /* ---------- Transitions ---------- */
+
+    --transition:
+        all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --transition-fast:
+        all 0.25s ease;
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    font-size: 16px;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+
+    background: var(--light);
+    color: var(--text-dark);
+
+    font-family: var(--sans);
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--sans);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--serif);
+    line-height: 1.25;
+}
+
+p {
+    margin: 0;
+}
+
+::selection {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+
+/* =========================================================
+   3. CONTAINER
+   ========================================================= */
+
+.container,
+.prop-container {
+    width: min(var(--container), 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 82px;
+
+    z-index: 3000;
+
+    background: rgba(8, 13, 19, 0.96);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   5. NORMAL LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    max-width: 390px;
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.4px;
+}
+
+.logo-icon {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Normal logo — no artificial background */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    overflow: hidden;
+}
+
+.logo-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.logo>span:last-child {
+    display: block;
+
+    max-width: 390px;
+
+    color: var(--white);
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+.logo>span:last-child>span {
+    color: var(--green);
+}
+
+.logo small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--green);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.navbar>a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    transition: var(--transition);
+}
+
+.navbar>a:not(.nav-whatsapp)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    transition: width 0.3s ease;
+}
+
+.navbar>a:hover {
+    color: var(--white);
+}
+
+.navbar>a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   7. WHATSAPP NAV BUTTON
+   ========================================================= */
+
+.nav-whatsapp {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 17px !important;
+
+    background: var(--green);
+
+    color: var(--navy-dark) !important;
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 700 !important;
+
+    box-shadow: none;
+}
+
+.nav-whatsapp::after {
+    display: none !important;
+}
+
+.nav-whatsapp:hover {
+    background: var(--green-dark);
+
+    color: var(--white) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-green);
+}
+
+
+/* =========================================================
+   8. MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 43px;
+    height: 43px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 3100;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: var(--radius-sm);
+
+    font-size: 20px;
+
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+.menu-btn:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   9. PROPERTY HERO
+   ========================================================= */
+
+.prop-hero {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        150px 20px 100px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    /*
+       Fixed real-estate background.
+    */
+
+    background:
+        linear-gradient(135deg,
+            rgba(8, 13, 19, 0.94),
+            rgba(16, 28, 44, 0.78),
+            rgba(8, 13, 19, 0.94)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85") center center / cover no-repeat;
+
+    /* IMPORTANT */
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   10. HERO DECORATION
+   ========================================================= */
+
+.prop-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 15% 30%,
+            rgba(32, 201, 151, 0.15),
+            transparent 30%),
+        radial-gradient(circle at 85% 65%,
+            rgba(212, 175, 55, 0.13),
+            transparent 30%);
+}
+
+.prop-hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 160px;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(to top,
+            var(--light),
+            transparent);
+}
+
+
+/* =========================================================
+   11. HERO CONTENT
+   ========================================================= */
+
+.prop-hero__inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+}
+
+.prop-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    padding: 7px 14px;
+
+    color: var(--green);
+
+    background: rgba(32, 201, 151, 0.08);
+
+    border: 1px solid rgba(32, 201, 151, 0.30);
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.73rem;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.prop-breadcrumb i {
+    color: var(--gold);
+
+    font-size: 0.6rem;
+}
+
+.prop-hero h1 {
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: clamp(2.6rem,
+            6vw,
+            5rem);
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1.1;
+}
+
+.prop-hero p {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: var(--muted-light);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   12. PROPERTY SECTIONS
+   ========================================================= */
+
+.prop-section {
+    position: relative;
+
+    padding: 100px 0;
+
+    background: var(--light);
+
+    overflow: hidden;
+}
+
+.prop-section--alt {
+    background: var(--white);
+}
+
+
+/* =========================================================
+   13. SECTION DECORATION
+   ========================================================= */
+
+.prop-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -160px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(32, 201, 151, 0.07),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   14. SECTION HEADING
+   ========================================================= */
+
+.prop-section__head {
+    position: relative;
+
+    max-width: 760px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.prop-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--green);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 2.2px;
+
+    text-transform: uppercase;
+}
+
+.prop-section__head h2 {
+    margin-bottom: 17px;
+
+    color: var(--navy);
+
+    font-size: clamp(2rem,
+            4vw,
+            3.25rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+}
+
+.prop-section__head p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   15. PROPERTY GRID
+   ========================================================= */
+
+.prop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   16. PROPERTY CARD
+   ========================================================= */
+
+.prop-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    background: var(--white);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.prop-section--alt .prop-card {
+    background: var(--light);
+}
+
+.prop-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(32, 201, 151, 0.35);
+
+    box-shadow:
+        0 28px 65px rgba(16, 28, 44, 0.16);
+}
+
+
+/* =========================================================
+   17. PROPERTY IMAGE AREA
+   ========================================================= */
+
+.prop-card__media {
+    position: relative;
+
+    width: 100%;
+
+    height: 245px;
+
+    overflow: hidden;
+
+    background: var(--ash);
+}
+
+.prop-card__media::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(to top,
+            rgba(8, 13, 19, 0.25),
+            transparent 45%);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.prop-card__media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.prop-card:hover .prop-card__media img {
+    transform: scale(1.07);
+}
+
+
+/* =========================================================
+   18. PROPERTY BADGES
+   ========================================================= */
+
+.prop-badge {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    z-index: 3;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.prop-badge--sale {
+    background: var(--green);
+
+    color: var(--navy-dark);
+
+    box-shadow:
+        0 7px 20px rgba(32, 201, 151, 0.25);
+}
+
+.prop-badge--rent {
+    background: var(--gold);
+
+    color: var(--navy-dark);
+
+    box-shadow:
+        0 7px 20px rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   19. PROPERTY CARD BODY
+   ========================================================= */
+
+.prop-card__body {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 27px 25px 24px;
+}
+
+.prop-card__body h3 {
+    margin-bottom: 9px;
+
+    color: var(--navy);
+
+    font-size: 1.28rem;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+}
+
+.prop-variant {
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   20. PROPERTY LOCATION
+   ========================================================= */
+
+.prop-location {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+
+    color: var(--muted);
+
+    font-size: 0.79rem;
+    font-weight: 500;
+}
+
+.prop-location i {
+    color: var(--green);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   21. PROPERTY SPECS
+   ========================================================= */
+
+.prop-specs {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px 15px;
+
+    margin-bottom: 18px;
+
+    padding: 13px 0;
+
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.prop-specs span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--text);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+.prop-specs i {
+    color: var(--gold);
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   22. PROPERTY DESCRIPTION
+   ========================================================= */
+
+.prop-desc {
+    color: var(--muted);
+
+    font-size: 0.81rem;
+
+    line-height: 1.75;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   23. PROPERTY FOOTER
+   ========================================================= */
+
+.prop-card__footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: auto;
+
+    padding-top: 3px;
+}
+
+.prop-price {
+    color: var(--navy);
+
+    font-family: var(--serif);
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+.prop-price small {
+    margin-left: 3px;
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   24. PROPERTY BUTTON
+   ========================================================= */
+
+.prop-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding: 10px 16px;
+
+    flex-shrink: 0;
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    border: 1px solid var(--navy);
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+
+    transition: var(--transition);
+}
+
+.prop-btn:hover {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--navy-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-green);
+}
+
+.prop-btn:focus-visible {
+    outline: 2px solid var(--green);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   25. CTA BAND
+   ========================================================= */
+
+.prop-cta {
+    position: relative;
+
+    padding: 75px 0;
+
+    background:
+        linear-gradient(135deg,
+            var(--navy-dark),
+            var(--navy));
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+.prop-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -250px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(32, 201, 151, 0.16);
+
+    box-shadow:
+        0 0 0 40px rgba(32, 201, 151, 0.025),
+        0 0 0 80px rgba(32, 201, 151, 0.018);
+
+    pointer-events: none;
+}
+
+.prop-cta__inner {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.prop-cta h2 {
+    margin-bottom: 10px;
+
+    color: var(--white);
+
+    font-size: clamp(1.7rem,
+            3vw,
+            2.5rem);
+
+    line-height: 1.25;
+}
+
+.prop-cta p {
+    max-width: 650px;
+
+    color: var(--muted-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+.prop-btn--light {
+    flex-shrink: 0;
+
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--navy-dark);
+
+    padding:
+        13px 22px;
+}
+
+.prop-btn--light:hover {
+    background: var(--white);
+
+    border-color: var(--white);
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   26. FOOTER
+   ========================================================= */
+
+.footer {
+    position: relative;
+
+    padding-top: 75px;
+
+    background: var(--navy-dark);
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(32, 201, 151, 0.6),
+            transparent);
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 0.8fr 0.8fr 1fr;
+
+    gap: 55px;
+
+    padding-bottom: 55px;
+}
+
+
+/* =========================================================
+   27. FOOTER ABOUT
+   ========================================================= */
+
+.footer-about {
+    min-width: 0;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-about>p {
+    max-width: 380px;
+
+    color: var(--muted-light);
+
+    font-size: 0.83rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   28. FOOTER SOCIALS
+   ========================================================= */
+
+.socials {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 23px;
+}
+
+.socials a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 50%;
+
+    font-size: 0.8rem;
+
+    transition: var(--transition);
+}
+
+.socials a:hover {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--navy-dark);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   29. FOOTER COLUMNS
+   ========================================================= */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-column h4 {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 9px;
+
+    color: var(--white);
+
+    font-size: 1rem;
+
+    font-weight: 700;
+}
+
+.footer-column h4::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--green);
+}
+
+.footer-column>a,
+.footer-column>span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--muted-light);
+
+    font-size: 0.77rem;
+
+    line-height: 1.65;
+
+    transition: var(--transition);
+}
+
+.footer-column>a:hover {
+    color: var(--green);
+
+    transform: translateX(3px);
+}
+
+.footer-column>span {
+    max-width: 250px;
+}
+
+
+/* =========================================================
+   30. FOOTER WHATSAPP
+   ========================================================= */
+
+.footer-whatsapp {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 8px;
+
+    padding: 10px 15px;
+
+    background: var(--green);
+
+    color: var(--navy-dark) !important;
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 700 !important;
+
+    transition: var(--transition);
+}
+
+.footer-whatsapp:hover {
+    background: var(--white);
+
+    color: var(--navy) !important;
+
+    transform: translateY(-2px) !important;
+}
+
+
+/* =========================================================
+   31. FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.50);
+
+    font-size: 0.7rem;
+}
+
+.footer-bottom>div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-bottom a {
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: var(--green);
+}
+
+
+/* =========================================================
+   32. SCROLL REVEAL ANIMATIONS
+   ========================================================= */
+
+.js-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.2,
+            0.65,
+            0.3,
+            1);
+}
+
+.js-reveal.reveal-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.js-reveal-delay-1 {
+    transition-delay: 0.10s;
+}
+
+.js-reveal-delay-2 {
+    transition-delay: 0.20s;
+}
+
+.js-reveal-delay-3 {
+    transition-delay: 0.30s;
+}
+
+
+/* =========================================================
+   33. IMAGE REVEAL
+   ========================================================= */
+
+.prop-card .js-reveal-image {
+    opacity: 0;
+
+    transform:
+        scale(1.04);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s cubic-bezier(0.2,
+            0.65,
+            0.3,
+            1);
+}
+
+.prop-card .js-reveal-image.reveal-visible {
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   34. LARGE TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .navbar>a {
+        font-size: 13px;
+    }
+
+    .logo {
+        max-width: 350px;
+    }
+
+    .prop-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            1.4fr 0.8fr 0.8fr 1fr;
+
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   35. TABLET / MOBILE NAV
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* ---------- Header ---------- */
+
+    .header {
+        min-height: 72px;
+    }
+
+    .nav-container {
+        min-height: 72px;
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo {
+        gap: 9px;
+
+        max-width: 300px;
+
+        font-size: 11px;
+    }
+
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+    }
+
+    .logo>span:last-child {
+        font-size: 11px;
+    }
+
+    .logo small {
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    /* ---------- Menu ---------- */
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* ---------- Mobile Navbar ---------- */
+
+    .navbar {
+        position: fixed;
+
+        top: 72px;
+        right: -100%;
+
+        width: min(320px, 85%);
+
+        height:
+            calc(100vh - 72px);
+
+        padding:
+            30px 25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        background:
+            linear-gradient(160deg,
+                var(--navy-dark),
+                var(--navy));
+
+        border-left:
+            1px solid var(--border);
+
+        box-shadow:
+            -15px 0 40px rgba(0, 0, 0, 0.5);
+
+        overflow-y: auto;
+
+        transition:
+            right 0.35s ease;
+
+        z-index: 3050;
+    }
+
+    .navbar.show {
+        right: 0;
+    }
+
+    .navbar>a {
+        width: 100%;
+
+        padding: 13px 0;
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .navbar>a:not(.nav-whatsapp)::after {
+        display: none;
+    }
+
+    .navbar>a:hover {
+        color: var(--green);
+    }
+
+    .nav-whatsapp {
+        margin-top: 10px;
+
+        padding:
+            13px 17px !important;
+
+        border-bottom: none !important;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .prop-hero {
+        min-height: 470px;
+
+        padding:
+            135px 20px 90px;
+
+        /* Mobile fallback */
+        background-attachment: scroll;
+    }
+
+    .prop-hero h1 {
+        font-size:
+            clamp(2.3rem,
+                8vw,
+                3.8rem);
+    }
+
+    .prop-hero p {
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- Sections ---------- */
+
+    .prop-section {
+        padding: 80px 0;
+    }
+
+    .prop-section__head {
+        margin-bottom: 40px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .prop-cta {
+        padding: 65px 0;
+    }
+
+    .prop-cta__inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+        padding-top: 65px;
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 45px 30px;
+    }
+}
+
+
+/* =========================================================
+   36. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container,
+    .prop-container {
+        width: min(92%, 540px);
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo {
+        max-width: 260px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+
+        flex-basis: 45px;
+    }
+
+    .logo>span:last-child {
+        font-size: 10px;
+    }
+
+    .logo small {
+        font-size: 7px;
+
+        letter-spacing: 0.6px;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .prop-hero {
+        min-height: 450px;
+
+        padding:
+            120px 18px 75px;
+    }
+
+    .prop-breadcrumb {
+        font-size: 0.64rem;
+
+        letter-spacing: 1.3px;
+    }
+
+    .prop-hero h1 {
+        font-size: 2.15rem;
+
+        letter-spacing: -0.7px;
+    }
+
+    .prop-hero p {
+        font-size: 0.83rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* ---------- Section ---------- */
+
+    .prop-section {
+        padding: 70px 0;
+    }
+
+    .prop-section__head {
+        margin-bottom: 35px;
+    }
+
+    .prop-section__head h2 {
+        font-size: 2rem;
+    }
+
+    .prop-section__head p {
+        font-size: 0.84rem;
+    }
+
+
+    /* ---------- Grid ---------- */
+
+    .prop-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    /* ---------- Cards ---------- */
+
+    .prop-card__media {
+        height: 235px;
+    }
+
+    .prop-card__body {
+        padding:
+            24px 21px 22px;
+    }
+
+    .prop-card__body h3 {
+        font-size: 1.2rem;
+    }
+
+    .prop-location {
+        font-size: 0.76rem;
+    }
+
+    .prop-specs {
+        gap: 7px 12px;
+    }
+
+    .prop-specs span {
+        font-size: 0.7rem;
+    }
+
+    .prop-desc {
+        font-size: 0.78rem;
+    }
+
+    .prop-card__footer {
+        align-items: center;
+    }
+
+    .prop-price {
+        font-size: 0.98rem;
+    }
+
+    .prop-btn {
+        min-height: 41px;
+
+        padding:
+            9px 13px;
+
+        font-size: 0.68rem;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .prop-cta {
+        padding: 60px 0;
+    }
+
+    .prop-cta h2 {
+        font-size: 1.75rem;
+    }
+
+    .prop-cta p {
+        font-size: 0.82rem;
+    }
+
+    .prop-btn--light {
+        width: 100%;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+    }
+
+    .footer-about>p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding:
+            20px 0;
+
+        gap: 12px;
+    }
+
+    .footer-bottom>div {
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+}
+
+
+/* =========================================================
+   37. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header {
+        min-height: 68px;
+    }
+
+    .nav-container {
+        min-height: 68px;
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo {
+        gap: 7px;
+
+        max-width: 245px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+    }
+
+    .logo>span:last-child {
+        font-size: 8.5px;
+
+        line-height: 1.2;
+    }
+
+    .logo small {
+        font-size: 6.5px;
+
+        letter-spacing: 0.45px;
+    }
+
+
+    /* ---------- Mobile menu ---------- */
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .navbar {
+        top: 68px;
+
+        height:
+            calc(100vh - 68px);
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .prop-hero {
+        min-height: 420px;
+
+        padding:
+            110px 15px 65px;
+    }
+
+    .prop-breadcrumb {
+        margin-bottom: 14px;
+
+        padding:
+            6px 10px;
+
+        font-size: 0.58rem;
+    }
+
+    .prop-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .prop-hero p {
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- Sections ---------- */
+
+    .prop-section {
+        padding: 60px 0;
+    }
+
+    .prop-section__head h2 {
+        font-size: 1.75rem;
+    }
+
+    .prop-section__head p {
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- Card ---------- */
+
+    .prop-card__media {
+        height: 215px;
+    }
+
+    .prop-card__body {
+        padding:
+            21px 17px 19px;
+    }
+
+    .prop-card__body h3 {
+        font-size: 1.1rem;
+    }
+
+    .prop-variant {
+        font-size: 0.68rem;
+    }
+
+    .prop-location {
+        font-size: 0.7rem;
+    }
+
+    .prop-specs {
+        gap: 6px 9px;
+    }
+
+    .prop-specs span {
+        font-size: 0.64rem;
+    }
+
+    .prop-desc {
+        font-size: 0.73rem;
+    }
+
+    .prop-price {
+        font-size: 0.87rem;
+    }
+
+    .prop-btn {
+        min-height: 39px;
+
+        padding:
+            8px 11px;
+
+        font-size: 0.63rem;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+        padding-top: 55px;
+    }
+
+    .footer-bottom {
+        font-size: 0.64rem;
+    }
+}
+
+
+/* =========================================================
+   38. REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    .prop-hero {
+        background-attachment: scroll;
+    }
+
+    .js-reveal,
+    .prop-card .js-reveal-image {
+        opacity: 1 !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   39. OVERFLOW / SAFETY
+   ========================================================= */
+
+.prop-hero,
+.prop-section,
+.prop-cta,
+.footer,
+.prop-container,
+.prop-grid,
+.prop-card {
+    max-width: 100%;
+}
+
+.prop-card,
+.prop-card__body,
+.prop-card__footer,
+.prop-location,
+.prop-specs {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   END OF STYLE.CSS
+   ========================================================= */

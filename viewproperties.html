@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Properties — IHAM Realty</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="viewproperty.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -575,5 +576,30 @@
 
 
 </body>
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.getElementById("navbar");
+    menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("show");
+        const icon = menuBtn.querySelector("i");
+        if (navbar.classList.contains("show")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    });
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("show");
+            const icon = menuBtn.querySelector("i");
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        });
+    });
+</script>
+
 
 </html>

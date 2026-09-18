@@ -1,0 +1,1145 @@
+/* =========================================================
+   IHAM REAL ESTATE — ADAPTED ABOUT US STYLESHEET
+   Institute of Housing Administration & Management Ltd/GTE
+
+   Design system: Navy + Green + Gold + White + Ash
+   HTML structure & class names strictly preserved.
+   ========================================================= */
+
+/* =========================================================
+   1. ROOT DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+    /* ---------- Color Palette ---------- */
+    --navy: #101c2c;
+    --navy-dark: #080d13;
+    --navy-light: #162538;
+    --navy-soft: #1d3044;
+
+    --green: #20c997;
+    --green-dark: #159f76;
+    --green-soft: rgba(32, 201, 151, 0.10);
+
+    --gold: #d4af37;
+    --gold-light: #e5c76b;
+    --gold-dark: #a98519;
+    --gold-soft: rgba(212, 175, 55, 0.12);
+
+    /* ---------- Neutrals ---------- */
+    --white: #ffffff;
+    --light: #f6f8fa;
+    --ash: #eef1f4;
+    --border: rgba(255, 255, 255, 0.10);
+    --border-light: #e7eaee;
+
+    --text-dark: #17202b;
+    --muted: #697586;
+    --muted-light: rgba(255, 255, 255, 0.68);
+
+    /* ---------- Typography ---------- */
+    --sans: "DM Sans", Arial, sans-serif;
+    --serif: "Playfair Display", Georgia, serif;
+
+    /* ---------- Layout & Utilities ---------- */
+    --container: 1180px;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-lg: 18px;
+
+    /* ---------- Shadows ---------- */
+    --shadow: 0 18px 45px rgba(16, 28, 44, 0.10);
+    --shadow-lg: 0 25px 70px rgba(8, 13, 19, 0.18);
+    --shadow-dark: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --shadow-green: 0 12px 35px rgba(32, 201, 151, 0.22);
+    --shadow-gold: 0 12px 35px rgba(212, 175, 55, 0.20);
+
+    /* ---------- Animations ---------- */
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.25s ease;
+}
+
+/* =========================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background: var(--navy-dark);
+    color: var(--white);
+    font-family: var(--sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    background: none;
+    font: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--serif);
+    line-height: 1.25;
+}
+
+h1 span, h2 span {
+    color: var(--green);
+}
+
+p {
+    margin: 0;
+}
+
+::selection {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+/* Containers */
+.container,
+.iham-container {
+    width: min(var(--container), 92%);
+    margin: 0 auto;
+}
+
+/* Section Wrapper */
+.iham-section {
+    padding: 100px 0;
+}
+
+/* =========================================================
+   3. HEADER & NAVIGATION
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 82px;
+    z-index: 3000;
+    background: rgba(8, 13, 19, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.nav-container {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    max-width: 390px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo > span:last-child {
+    display: block;
+    max-width: 390px;
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.logo > span:last-child > span {
+    color: var(--green);
+}
+
+.logo small {
+    display: block;
+    margin-top: 2px;
+    color: var(--green);
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+/* Navbar Links */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar > a {
+    position: relative;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: var(--transition);
+}
+
+.navbar > a:not(.nav-whatsapp)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    transition: width 0.3s ease;
+}
+
+.navbar > a:hover {
+    color: var(--white);
+}
+
+.navbar > a:hover::after {
+    width: 100%;
+}
+
+/* Nav WhatsApp Button */
+.nav-whatsapp {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 17px !important;
+    background: var(--green);
+    color: var(--navy-dark) !important;
+    border-radius: var(--radius-sm);
+    font-weight: 700 !important;
+    box-shadow: none;
+}
+
+.nav-whatsapp::after {
+    display: none !important;
+}
+
+.nav-whatsapp:hover {
+    background: var(--green-dark);
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-green);
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    width: 43px;
+    height: 43px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3100;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+/* =========================================================
+   4. HERO SECTION (WITH FIXED BACKGROUND)
+   ========================================================= */
+
+.iham-about-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+.iham-about-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 160px 0 100px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 13, 19, 0.92),
+            rgba(16, 28, 44, 0.75),
+            rgba(8, 13, 19, 0.90)
+        ),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    
+    /* Background-attachment requirement */
+    background-attachment: fixed;
+}
+
+.iham-about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 70% 40%,
+        rgba(32, 201, 151, 0.12),
+        transparent 50%
+    );
+    pointer-events: none;
+}
+
+.iham-about-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.iham-about-hero__title {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.iham-about-hero__text {
+    font-size: 1.1rem;
+    color: var(--muted-light);
+    max-width: 650px;
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.iham-about-hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* =========================================================
+   5. BUTTON COMPONENTS
+   ========================================================= */
+
+.iham-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.iham-btn--green {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+.iham-btn--green:hover {
+    background: var(--green-dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-green);
+}
+
+.iham-btn--whatsapp {
+    background: #25d366;
+    color: var(--white);
+}
+
+.iham-btn--whatsapp:hover {
+    background: #1ebe5d;
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* =========================================================
+   6. LABELS AND HEADINGS
+   ========================================================= */
+
+.iham-section-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.iham-section-label--light {
+    padding: 6px 14px;
+    border: 1px solid rgba(32, 201, 151, 0.4);
+    border-radius: var(--radius-sm);
+    background: rgba(32, 201, 151, 0.08);
+}
+
+.iham-section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.iham-center-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.iham-center-heading p {
+    color: var(--muted-light);
+    font-size: 1rem;
+    margin-top: 12px;
+}
+
+/* =========================================================
+   7. COMPANY STORY & NATIONAL ENGAGEMENT
+   ========================================================= */
+
+.iham-story {
+    background: var(--navy);
+    border-bottom: 1px solid var(--border);
+}
+
+.iham-story__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.iham-story__image {
+    position: relative;
+}
+
+.iham-story__image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-dark);
+    height: 520px;
+    object-fit: cover;
+}
+
+.iham-experience-box {
+    position: absolute;
+    bottom: -25px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--navy-dark);
+    border: 6px solid var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--shadow-green);
+}
+
+.iham-experience-box strong {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.iham-experience-box span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.iham-story__content p {
+    color: var(--muted-light);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.iham-story__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.iham-story__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.iham-story__feature-icon {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    border-radius: var(--radius-sm);
+    background: var(--green-soft);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.iham-story__feature strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.iham-story__feature span {
+    color: var(--muted-light);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    display: block;
+}
+
+/* =========================================================
+   8. MISSION & VISION
+   ========================================================= */
+
+.iham-mission {
+    background: var(--navy-light);
+}
+
+.iham-purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.iham-purpose-card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 30px;
+    transition: var(--transition);
+}
+
+.iham-purpose-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(32, 201, 151, 0.4);
+    box-shadow: var(--shadow-dark);
+}
+
+.iham-purpose-card__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--green-soft);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.iham-purpose-card:hover .iham-purpose-card__icon {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+.iham-purpose-card h3 {
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+
+.iham-purpose-card p {
+    color: var(--muted-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   9. WHY CHOOSE US
+   ========================================================= */
+
+.iham-why-us {
+    background: var(--navy-dark);
+}
+
+.iham-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.iham-benefit-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 35px 28px;
+    transition: var(--transition);
+}
+
+.iham-benefit-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--green);
+    box-shadow: var(--shadow-green);
+}
+
+.iham-benefit-card__icon {
+    font-size: 2rem;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.iham-benefit-card h3 {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.iham-benefit-card p {
+    color: var(--muted-light);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   10. STATISTICS
+   ========================================================= */
+
+.iham-stats {
+    padding: 60px 0;
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.iham-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.iham-stat {
+    text-align: center;
+    padding: 15px;
+    border-right: 1px solid var(--border);
+}
+
+.iham-stat:last-child {
+    border-right: none;
+}
+
+.iham-stat i {
+    font-size: 1.5rem;
+    color: var(--green);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.iham-stat strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.iham-stat span {
+    font-size: 0.78rem;
+    color: var(--muted-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   11. TESTIMONIALS & CAROUSEL
+   ========================================================= */
+
+.iham-testimonials {
+    background: var(--navy-light);
+}
+
+.iham-testimonial-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.iham-testimonial-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.iham-testimonial-card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.iham-testimonial-card:hover {
+    border-color: rgba(32, 201, 151, 0.3);
+    transform: translateY(-5px);
+}
+
+.iham-testimonial-card__top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.iham-testimonial-card__top img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--green);
+}
+
+.iham-testimonial-card__top h3 {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.iham-testimonial-card__top span {
+    font-size: 0.75rem;
+    color: var(--muted-light);
+    display: block;
+}
+
+.iham-testimonial-card__rating {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.iham-testimonial-card p {
+    color: var(--muted-light);
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.iham-testimonial-arrow {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 1px solid var(--border);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.iham-testimonial-arrow:hover {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+.iham-testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.iham-testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.iham-testimonial-dot--active {
+    background: var(--green);
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   12. WHATSAPP CTA
+   ========================================================= */
+
+.iham-about-cta {
+    position: relative;
+    padding: 80px 0;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(32, 201, 151, 0.15),
+            rgba(16, 28, 44, 0.96)
+        );
+    border-top: 1px solid var(--border);
+}
+
+.iham-about-cta__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.iham-about-cta__content h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--white);
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.iham-about-cta__content p {
+    color: var(--muted-light);
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+.footer {
+    padding-top: 75px;
+    background: var(--navy-dark);
+    border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 45px;
+    padding-bottom: 55px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-about > p {
+    max-width: 330px;
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.socials a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.50);
+    transition: var(--transition);
+}
+
+.socials a:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--navy-dark);
+    transform: translateY(-3px);
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    color: var(--green);
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column span {
+    display: block;
+    margin-bottom: 11px;
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 0.76rem;
+    line-height: 1.8;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--green);
+    padding-left: 4px;
+}
+
+.footer-whatsapp {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    color: #25d366 !important;
+}
+
+.footer-whatsapp:hover {
+    color: #1ebe5d !important;
+}
+
+.footer-bottom {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.30);
+    font-size: 0.7rem;
+}
+
+.footer-bottom div {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom a:hover {
+    color: var(--green);
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 2000;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25d366;
+    color: var(--white);
+    font-size: 1.55rem;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.30);
+    transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* =========================================================
+   14. SCROLL REVEAL ANIMATION CLASSES
+   ========================================================= */
+
+.js-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.js-reveal.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js-reveal-delay-1 { transition-delay: 0.1s; }
+.js-reveal-delay-2 { transition-delay: 0.2s; }
+.js-reveal-delay-3 { transition-delay: 0.3s; }
+
+/* =========================================================
+   15. RESPONSIVE DESIGN & MOBILE FALLBACKS
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .iham-purpose-grid,
+    .iham-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .header { min-height: 72px; }
+    .nav-container { min-height: 72px; }
+
+    .menu-btn { display: flex; }
+
+    .navbar {
+        position: fixed;
+        top: 72px;
+        right: -100%;
+        width: min(320px, 85%);
+        height: calc(100vh - 72px);
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        background: var(--navy-dark);
+        border-left: 1px solid var(--border);
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        transition: right 0.35s ease;
+        z-index: 3050;
+    }
+
+    .navbar.show { right: 0; }
+
+    .navbar > a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Fixed background fallback for mobile devices */
+    .iham-about-hero {
+        background-attachment: scroll;
+    }
+
+    .iham-story__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .iham-testimonial-track {
+        grid-template-columns: 1fr;
+    }
+
+    .iham-testimonial-arrow {
+        display: none;
+    }
+
+    .iham-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iham-stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+    }
+
+    .iham-stat:last-child {
+        border-bottom: none;
+    }
+
+    .iham-about-cta__content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .iham-purpose-grid,
+    .iham-benefits-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .iham-story__features {
+        grid-template-columns: 1fr;
+    }
+
+    .iham-story__image img {
+        height: 380px;
+    }
+
+    .iham-experience-box {
+        right: 10px;
+        bottom: -15px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .iham-experience-box strong {
+        font-size: 1.8rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .iham-about-hero {
+        background-attachment: scroll;
+    }
+    .js-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

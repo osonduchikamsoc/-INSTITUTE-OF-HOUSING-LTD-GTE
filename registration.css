@@ -1,0 +1,1757 @@
+/* =========================================================
+   IHAM TRAINEE REGISTRATION
+   Institute of Housing Administration & Management Ltd/GTE
+
+   Design System:
+   Navy + Green + Gold + White + Ash
+
+   IMPORTANT:
+   - Existing HTML class names preserved
+   - Existing IDs preserved
+   - No HTML structure changes required
+   - Normal logo kept transparent
+   - Fixed background implemented
+   - Mobile fallback included
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+
+    /* ---------- Primary Colors ---------- */
+
+    --navy: #101c2c;
+    --navy-dark: #080d13;
+    --navy-light: #162538;
+    --navy-soft: #1d3044;
+
+    /* ---------- Green ---------- */
+
+    --green: #20c997;
+    --green-dark: #159f76;
+    --green-light: #52ddb5;
+    --green-soft: rgba(32, 201, 151, 0.10);
+
+    /* ---------- Gold ---------- */
+
+    --gold: #d4af37;
+    --gold-light: #e5c76b;
+    --gold-dark: #a98519;
+    --gold-soft: rgba(212, 175, 55, 0.12);
+
+    /* ---------- Neutrals ---------- */
+
+    --white: #ffffff;
+    --light: #f6f8fa;
+    --ash: #eef1f4;
+    --ash-dark: #dfe4e9;
+
+    --text-dark: #17202b;
+    --text: #273444;
+
+    --muted: #697586;
+    --muted-light: rgba(255, 255, 255, 0.68);
+
+    /* ---------- Borders ---------- */
+
+    --border: rgba(255, 255, 255, 0.10);
+    --border-light: #e7eaee;
+    --border-dark: rgba(16, 28, 44, 0.12);
+
+    /* ---------- Typography ---------- */
+
+    --sans: "DM Sans", Arial, sans-serif;
+    --serif: "Playfair Display", Georgia, serif;
+
+    /* ---------- Layout ---------- */
+
+    --container: 1180px;
+
+    /* ---------- Radius ---------- */
+
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-lg: 18px;
+    --radius-xl: 22px;
+
+    /* ---------- Shadows ---------- */
+
+    --shadow:
+        0 18px 45px rgba(16, 28, 44, 0.10);
+
+    --shadow-lg:
+        0 25px 70px rgba(8, 13, 19, 0.18);
+
+    --shadow-dark:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    --shadow-green:
+        0 12px 35px rgba(32, 201, 151, 0.22);
+
+    --shadow-gold:
+        0 12px 35px rgba(212, 175, 55, 0.20);
+
+    /* ---------- Transitions ---------- */
+
+    --transition:
+        all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --transition-fast:
+        all 0.25s ease;
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--navy-dark);
+    color: var(--white);
+    font-family: var(--sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--serif);
+    line-height: 1.25;
+}
+
+p {
+    margin: 0;
+}
+
+::selection {
+    background: var(--green);
+    color: var(--navy-dark);
+}
+
+
+/* =========================================================
+   3. CONTAINERS
+   ========================================================= */
+
+.container,
+.trainee-registration-container {
+    width: min(var(--container), 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 82px;
+
+    z-index: 3000;
+
+    background: rgba(8, 13, 19, 0.96);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   5. NORMAL LOGO
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   There is NO background, circle, border or box
+   around the normal logo.
+*/
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    max-width: 390px;
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.4px;
+}
+
+.logo-icon {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Normal transparent logo */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    overflow: hidden;
+}
+
+.logo-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+
+    /* No background around image */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.logo > span:last-child {
+    display: block;
+
+    max-width: 390px;
+
+    color: var(--white);
+
+    font-family: var(--sans);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+.logo > span:last-child > span {
+    color: var(--green);
+}
+
+.logo small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--green);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.navbar > a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    transition: var(--transition);
+}
+
+.navbar > a:not(.nav-whatsapp)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    transition: width 0.3s ease;
+}
+
+.navbar > a:hover {
+    color: var(--white);
+}
+
+.navbar > a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   7. NAV WHATSAPP BUTTON
+   ========================================================= */
+
+.nav-whatsapp {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 17px !important;
+
+    background: var(--green);
+
+    color: var(--navy-dark) !important;
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 700 !important;
+
+    box-shadow: none;
+}
+
+.nav-whatsapp::after {
+    display: none !important;
+}
+
+.nav-whatsapp:hover {
+    background: var(--green-dark);
+
+    color: var(--white) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-green);
+}
+
+
+/* =========================================================
+   8. MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 43px;
+    height: 43px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 3100;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: var(--radius-sm);
+
+    color: var(--white);
+
+    font-size: 20px;
+
+    background: transparent;
+
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    border-color: var(--green);
+
+    color: var(--green);
+}
+
+.menu-btn:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   9. TRAINEE REGISTRATION BACKGROUND
+   ========================================================= */
+
+.trainee-registration {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 155px 0 100px;
+
+    isolation: isolate;
+
+    /*
+       Professional dark real-estate background.
+       Fixed background effect is intentionally included.
+    */
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 13, 19, 0.94),
+            rgba(16, 28, 44, 0.78),
+            rgba(8, 13, 19, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+        center center / cover no-repeat;
+
+    /* IMPORTANT */
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   10. BACKGROUND DECORATION
+   ========================================================= */
+
+.trainee-registration::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(32, 201, 151, 0.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(212, 175, 55, 0.10),
+            transparent 30%
+        );
+}
+
+.trainee-registration::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 13, 19, 0.85),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   11. REGISTRATION CONTAINER
+   ========================================================= */
+
+.trainee-registration-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   12. REGISTRATION HEADER
+   ========================================================= */
+
+.trainee-form-header {
+    max-width: 850px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.trainee-form-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 7px 15px;
+
+    color: var(--green);
+
+    background: rgba(32, 201, 151, 0.08);
+
+    border: 1px solid rgba(32, 201, 151, 0.35);
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 2.3px;
+
+    text-transform: uppercase;
+}
+
+.trainee-form-header h2 {
+    color: var(--white);
+
+    font-size: clamp(
+        2.1rem,
+        5vw,
+        4rem
+    );
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.trainee-form-header h2 span {
+    display: block;
+
+    color: var(--green);
+}
+
+.trainee-form-header p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: var(--muted-light);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   13. FORM
+   ========================================================= */
+
+.trainee-form {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   14. FORM SECTIONS
+   ========================================================= */
+
+.form-section {
+    position: relative;
+
+    margin-bottom: 24px;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.70);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+
+    transition: var(--transition);
+}
+
+.form-section:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 30px 75px rgba(8, 13, 19, 0.22);
+}
+
+
+/* =========================================================
+   15. FORM SECTION HEADING
+   ========================================================= */
+
+.form-section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.form-section-heading > span {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--navy);
+
+    color: var(--green);
+
+    font-family: var(--serif);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(16, 28, 44, 0.15);
+
+    transition: var(--transition);
+}
+
+.form-section:hover .form-section-heading > span {
+    background: var(--green);
+
+    color: var(--navy-dark);
+
+    transform: scale(1.05);
+}
+
+.form-section-heading h3 {
+    color: var(--navy);
+
+    font-size: 1.45rem;
+
+    font-weight: 700;
+
+    margin-bottom: 3px;
+}
+
+.form-section-heading p {
+    color: var(--muted);
+
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   16. FORM GRID
+   ========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   17. FORM GROUP
+   ========================================================= */
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-dark);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: #d94b4b;
+
+    margin-left: 2px;
+}
+
+
+/* =========================================================
+   18. FORM CONTROLS
+   ========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    color: var(--text-dark);
+
+    background: var(--light);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: var(--radius-sm);
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Inputs + Selects */
+
+.form-group input,
+.form-group select {
+    min-height: 52px;
+
+    padding: 12px 15px;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 135px;
+
+    padding: 14px 15px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9aa4b2;
+
+    opacity: 1;
+}
+
+
+/* Select */
+
+.form-group select {
+    cursor: pointer;
+
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--green);
+
+    background: var(--white);
+
+    box-shadow:
+        0 0 0 4px rgba(32, 201, 151, 0.11);
+}
+
+
+/* Hover */
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #c8d0d9;
+}
+
+
+/* Date */
+
+.form-group input[type="date"] {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   19. FORM VALIDATION STATES
+   ========================================================= */
+
+.form-group input:required:invalid:not(:placeholder-shown),
+.form-group select:required:invalid {
+    border-color: rgba(217, 75, 75, 0.55);
+}
+
+.form-group input:required:valid,
+.form-group select:required:valid {
+    border-color: rgba(32, 201, 151, 0.35);
+}
+
+
+/* =========================================================
+   20. AGREEMENT
+   ========================================================= */
+
+.form-agreement {
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    padding: 22px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(32, 201, 151, 0.10),
+            rgba(212, 175, 55, 0.08)
+        );
+
+    border: 1px solid rgba(32, 201, 151, 0.20);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   21. CHECKBOX
+   ========================================================= */
+
+.checkbox-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    cursor: pointer;
+}
+
+.checkbox-wrapper input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+
+    flex: 0 0 22px;
+
+    margin-top: 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #bcc5ce;
+
+    border-radius: 5px;
+
+    background: var(--white);
+
+    transition: var(--transition-fast);
+}
+
+.checkbox-wrapper:hover .custom-checkbox {
+    border-color: var(--green);
+}
+
+.checkbox-wrapper input:focus-visible + .custom-checkbox {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+.checkbox-wrapper input:checked + .custom-checkbox {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 5px 15px rgba(32, 201, 151, 0.20);
+}
+
+.checkbox-wrapper input:checked + .custom-checkbox::after {
+    content: "";
+
+    width: 6px;
+    height: 11px;
+
+    border-right: 2px solid var(--navy-dark);
+    border-bottom: 2px solid var(--navy-dark);
+
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.agreement-text {
+    color: var(--text);
+
+    font-size: 0.82rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   22. SUBMIT AREA
+   ========================================================= */
+
+.form-submit {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    text-align: center;
+}
+
+.form-submit button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 56px;
+
+    padding: 15px 30px;
+
+    border-radius: var(--radius-sm);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-dark)
+        );
+
+    color: var(--navy-dark);
+
+    font-size: 0.83rem;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    box-shadow: var(--shadow-green);
+
+    transition: var(--transition);
+}
+
+.form-submit button i {
+    font-size: 0.9rem;
+
+    transition: transform 0.3s ease;
+}
+
+.form-submit button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-light),
+            var(--green)
+        );
+
+    color: var(--navy-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 40px rgba(32, 201, 151, 0.30);
+}
+
+.form-submit button:hover i {
+    transform: translateX(5px);
+}
+
+.form-submit button:active {
+    transform: translateY(-1px);
+}
+
+.form-submit button:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+}
+
+.form-submit p {
+    color: var(--muted-light);
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   23. FLOATING WHATSAPP
+   ========================================================= */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 2000;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: var(--white);
+
+    font-size: 1.55rem;
+
+    box-shadow:
+        0 10px 30px rgba(37, 211, 102, 0.30);
+
+    transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+    background: #1ebe5d;
+
+    color: var(--white);
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+}
+
+.floating-whatsapp:focus-visible {
+    outline: 3px solid var(--white);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   24. SCROLL REVEAL ANIMATIONS
+   ========================================================= */
+
+.js-reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(
+            0.2,
+            0.65,
+            0.3,
+            1
+        );
+}
+
+.js-reveal.reveal-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.js-reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.js-reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.js-reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+
+/* =========================================================
+   25. TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .navbar > a {
+        font-size: 13px;
+    }
+
+    .logo {
+        max-width: 350px;
+    }
+
+    .form-section {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   26. MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Header */
+
+    .header {
+        min-height: 72px;
+    }
+
+    .nav-container {
+        min-height: 72px;
+    }
+
+
+    /* Logo */
+
+    .logo {
+        gap: 9px;
+
+        max-width: 300px;
+
+        font-size: 11px;
+    }
+
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+    }
+
+    .logo > span:last-child {
+        font-size: 11px;
+    }
+
+    .logo small {
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    /* Menu Button */
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* Mobile Navbar */
+
+    .navbar {
+        position: fixed;
+
+        top: 72px;
+        right: -100%;
+
+        width: min(320px, 85%);
+
+        height: calc(100vh - 72px);
+
+        padding: 30px 25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        background:
+            linear-gradient(
+                160deg,
+                var(--navy-dark),
+                var(--navy)
+            );
+
+        border-left: 1px solid var(--border);
+
+        box-shadow:
+            -15px 0 40px rgba(0, 0, 0, 0.5);
+
+        overflow-y: auto;
+
+        transition:
+            right 0.35s ease;
+
+        z-index: 3050;
+    }
+
+    .navbar.show {
+        right: 0;
+    }
+
+    .navbar > a {
+        width: 100%;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navbar > a:not(.nav-whatsapp)::after {
+        display: none;
+    }
+
+    .navbar > a:hover {
+        color: var(--green);
+    }
+
+    .nav-whatsapp {
+        margin-top: 10px;
+
+        padding: 13px 17px !important;
+
+        border-bottom: none !important;
+    }
+
+
+    /* Registration */
+
+    .trainee-registration {
+
+        padding:
+            135px 0 75px;
+
+        /*
+           Mobile fallback.
+           Fixed backgrounds can perform poorly
+           on some mobile browsers.
+        */
+
+        background-attachment: scroll;
+    }
+
+    .trainee-form-header {
+        margin-bottom: 38px;
+    }
+
+    .trainee-form-header h2 {
+        font-size: clamp(
+            2rem,
+            8vw,
+            3rem
+        );
+    }
+
+    .trainee-form-header p {
+        font-size: 0.92rem;
+    }
+
+
+    /* Form */
+
+    .form-section {
+        padding: 28px 25px;
+
+        margin-bottom: 20px;
+    }
+
+    .form-section-heading {
+        gap: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    .form-section-heading > span {
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .form-section-heading h3 {
+        font-size: 1.25rem;
+    }
+
+    .form-grid {
+        gap: 20px;
+    }
+
+
+    /* WhatsApp */
+
+    .floating-whatsapp {
+        right: 18px;
+        bottom: 18px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 1.4rem;
+    }
+}
+
+
+/* =========================================================
+   27. MOBILE FORM
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container,
+    .trainee-registration-container {
+        width: min(92%, 540px);
+    }
+
+
+    /* Logo */
+
+    .logo {
+        max-width: 260px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+
+        flex-basis: 45px;
+    }
+
+    .logo > span:last-child {
+        font-size: 10px;
+    }
+
+    .logo small {
+        font-size: 7px;
+
+        letter-spacing: 0.6px;
+    }
+
+
+    /* Registration */
+
+    .trainee-registration {
+        padding-top: 125px;
+    }
+
+    .trainee-form-header {
+        margin-bottom: 32px;
+    }
+
+    .trainee-form-label {
+        font-size: 0.65rem;
+
+        letter-spacing: 1.8px;
+    }
+
+    .trainee-form-header h2 {
+        font-size: 2rem;
+
+        letter-spacing: -0.5px;
+    }
+
+    .trainee-form-header p {
+        font-size: 0.87rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* One-column form */
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 19px;
+    }
+
+    .form-full {
+        grid-column: auto;
+    }
+
+    .form-section {
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+
+    /* Heading */
+
+    .form-section-heading {
+        align-items: flex-start;
+    }
+
+    .form-section-heading > span {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+
+        font-size: 0.9rem;
+    }
+
+    .form-section-heading h3 {
+        font-size: 1.18rem;
+    }
+
+    .form-section-heading p {
+        font-size: 0.76rem;
+    }
+
+
+    /* Inputs */
+
+    .form-group input,
+    .form-group select {
+        min-height: 50px;
+
+        font-size: 0.9rem;
+    }
+
+    .form-group textarea {
+        min-height: 125px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* Agreement */
+
+    .form-agreement {
+        padding: 18px;
+
+        border-radius: 13px;
+    }
+
+    .agreement-text {
+        font-size: 0.76rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* Submit */
+
+    .form-submit button {
+        width: 100%;
+
+        min-height: 54px;
+    }
+
+    .form-submit p {
+        font-size: 0.7rem;
+    }
+}
+
+
+/* =========================================================
+   28. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .header {
+        min-height: 68px;
+    }
+
+    .nav-container {
+        min-height: 68px;
+    }
+
+    .navbar {
+        top: 68px;
+
+        height: calc(100vh - 68px);
+    }
+
+
+    /* Smaller logo */
+
+    .logo {
+        gap: 7px;
+
+        max-width: 245px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+    }
+
+    .logo > span:last-child {
+        font-size: 8.5px;
+
+        line-height: 1.2;
+    }
+
+    .logo small {
+        font-size: 6.5px;
+
+        letter-spacing: 0.45px;
+    }
+
+
+    /* Menu */
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+
+    /* Registration */
+
+    .trainee-registration {
+        padding-top: 115px;
+
+        padding-bottom: 65px;
+    }
+
+    .trainee-form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .trainee-form-header p {
+        font-size: 0.82rem;
+    }
+
+
+    /* Form */
+
+    .form-section {
+        padding: 22px 16px;
+    }
+
+    .form-section-heading {
+        gap: 10px;
+
+        padding-bottom: 16px;
+    }
+
+    .form-section-heading > span {
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
+    }
+
+    .form-section-heading h3 {
+        font-size: 1.08rem;
+    }
+
+    .form-section-heading p {
+        font-size: 0.7rem;
+    }
+
+    .form-group label {
+        font-size: 0.78rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.86rem;
+    }
+
+
+    /* Agreement */
+
+    .checkbox-wrapper {
+        gap: 10px;
+    }
+
+    .custom-checkbox {
+        width: 20px;
+        height: 20px;
+
+        flex-basis: 20px;
+    }
+
+    .agreement-text {
+        font-size: 0.71rem;
+    }
+
+
+    /* Floating WhatsApp */
+
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 1.25rem;
+    }
+}
+
+
+/* =========================================================
+   29. REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    .trainee-registration {
+        background-attachment: scroll;
+    }
+
+    .js-reveal {
+        opacity: 1 !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   30. SAFETY AGAINST HORIZONTAL OVERFLOW
+   ========================================================= */
+
+.trainee-registration,
+.trainee-registration-container,
+.trainee-form,
+.form-section,
+.form-grid,
+.form-group {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   END OF REGISTRATION CSS
+   ========================================================= */
