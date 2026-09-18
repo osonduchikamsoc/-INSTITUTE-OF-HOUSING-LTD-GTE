@@ -1039,7 +1039,34 @@ p {
         min-height: 76px;
     }
 
-  
+
+
+
+    .logo {
+        gap: 8px;
+
+        max-width: calc(100% - 58px);
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .logo > span:last-child {
+        max-width: 230px;
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    .logo small {
+        margin-top: 1px;
+        font-size: 7px;
+        letter-spacing: 0.7px;
+    }
+
+ 
 
     .menu-btn {
          display: flex;

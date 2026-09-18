@@ -2012,7 +2012,6 @@ section.iham-service-card {
 
     .logo {
         gap: 8px;
-
         max-width: calc(100% - 58px);
     }
 
